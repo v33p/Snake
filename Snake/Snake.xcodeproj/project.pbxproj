@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		281B558B1AC5821A002622ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 281B558A1AC5821A002622ED /* main.m */; };
 		281B558E1AC5821A002622ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 281B558D1AC5821A002622ED /* AppDelegate.m */; };
-		281B55911AC5821A002622ED /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281B55901AC5821A002622ED /* FirstViewController.m */; };
-		281B55941AC5821A002622ED /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281B55931AC5821A002622ED /* SecondViewController.m */; };
+		281B55911AC5821A002622ED /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281B55901AC5821A002622ED /* InitialViewController.m */; };
+		281B55941AC5821A002622ED /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281B55931AC5821A002622ED /* HistoryViewController.m */; };
 		281B55971AC5821A002622ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281B55951AC5821A002622ED /* Main.storyboard */; };
 		281B55991AC5821A002622ED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 281B55981AC5821A002622ED /* Images.xcassets */; };
 		281B559C1AC5821A002622ED /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 281B559A1AC5821A002622ED /* LaunchScreen.xib */; };
 		281B55A81AC5821A002622ED /* SnakeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 281B55A71AC5821A002622ED /* SnakeTests.m */; };
+		281B55B31AC5920A002622ED /* ConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281B55B21AC5920A002622ED /* ConfigurationViewController.m */; };
+		281B55B61AC59520002622ED /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281B55B51AC59520002622ED /* ConnectViewController.m */; };
+		281B55B91AC59818002622ED /* MCController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281B55B81AC59818002622ED /* MCController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,16 +36,22 @@
 		281B558A1AC5821A002622ED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		281B558C1AC5821A002622ED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		281B558D1AC5821A002622ED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		281B558F1AC5821A002622ED /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		281B55901AC5821A002622ED /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		281B55921AC5821A002622ED /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		281B55931AC5821A002622ED /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		281B558F1AC5821A002622ED /* InitialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
+		281B55901AC5821A002622ED /* InitialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
+		281B55921AC5821A002622ED /* HistoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
+		281B55931AC5821A002622ED /* HistoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
 		281B55961AC5821A002622ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		281B55981AC5821A002622ED /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		281B559B1AC5821A002622ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		281B55A11AC5821A002622ED /* SnakeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnakeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		281B55A61AC5821A002622ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		281B55A71AC5821A002622ED /* SnakeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SnakeTests.m; sourceTree = "<group>"; };
+		281B55B11AC5920A002622ED /* ConfigurationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigurationViewController.h; sourceTree = "<group>"; };
+		281B55B21AC5920A002622ED /* ConfigurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigurationViewController.m; sourceTree = "<group>"; };
+		281B55B41AC59520002622ED /* ConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectViewController.h; sourceTree = "<group>"; };
+		281B55B51AC59520002622ED /* ConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectViewController.m; sourceTree = "<group>"; };
+		281B55B71AC59818002622ED /* MCController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCController.h; sourceTree = "<group>"; };
+		281B55B81AC59818002622ED /* MCController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,11 +95,17 @@
 			children = (
 				281B558C1AC5821A002622ED /* AppDelegate.h */,
 				281B558D1AC5821A002622ED /* AppDelegate.m */,
-				281B558F1AC5821A002622ED /* FirstViewController.h */,
-				281B55901AC5821A002622ED /* FirstViewController.m */,
-				281B55921AC5821A002622ED /* SecondViewController.h */,
-				281B55931AC5821A002622ED /* SecondViewController.m */,
+				281B558F1AC5821A002622ED /* InitialViewController.h */,
+				281B55901AC5821A002622ED /* InitialViewController.m */,
+				281B55921AC5821A002622ED /* HistoryViewController.h */,
+				281B55931AC5821A002622ED /* HistoryViewController.m */,
 				281B55951AC5821A002622ED /* Main.storyboard */,
+				281B55B41AC59520002622ED /* ConnectViewController.h */,
+				281B55B51AC59520002622ED /* ConnectViewController.m */,
+				281B55B71AC59818002622ED /* MCController.h */,
+				281B55B81AC59818002622ED /* MCController.m */,
+				281B55B11AC5920A002622ED /* ConfigurationViewController.h */,
+				281B55B21AC5920A002622ED /* ConfigurationViewController.m */,
 				281B55981AC5821A002622ED /* Images.xcassets */,
 				281B559A1AC5821A002622ED /* LaunchScreen.xib */,
 				281B55881AC5821A002622ED /* Supporting Files */,
@@ -173,6 +188,7 @@
 				TargetAttributes = {
 					281B55841AC5821A002622ED = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = KZE6652BPQ;
 					};
 					281B55A01AC5821A002622ED = {
 						CreatedOnToolsVersion = 6.2;
@@ -224,10 +240,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				281B55941AC5821A002622ED /* SecondViewController.m in Sources */,
+				281B55941AC5821A002622ED /* HistoryViewController.m in Sources */,
+				281B55B61AC59520002622ED /* ConnectViewController.m in Sources */,
 				281B558E1AC5821A002622ED /* AppDelegate.m in Sources */,
-				281B55911AC5821A002622ED /* FirstViewController.m in Sources */,
+				281B55911AC5821A002622ED /* InitialViewController.m in Sources */,
 				281B558B1AC5821A002622ED /* main.m in Sources */,
+				281B55B91AC59818002622ED /* MCController.m in Sources */,
+				281B55B31AC5920A002622ED /* ConfigurationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +368,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Snake/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -359,6 +379,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Snake/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

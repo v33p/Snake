@@ -17,6 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [self setMcController:[[MCController alloc] init]];
+    [self setName:[[UIDevice currentDevice] name]];
+    
     return YES;
 }
 

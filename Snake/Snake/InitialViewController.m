@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 UnderCaffeine. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "InitialViewController.h"
 
-@interface FirstViewController ()
+@interface InitialViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation InitialViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
