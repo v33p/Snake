@@ -18,6 +18,11 @@
 		281B55B31AC5920A002622ED /* ConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281B55B21AC5920A002622ED /* ConfigurationViewController.m */; };
 		281B55B61AC59520002622ED /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281B55B51AC59520002622ED /* ConnectViewController.m */; };
 		281B55B91AC59818002622ED /* MCController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281B55B81AC59818002622ED /* MCController.m */; };
+		28438CDD1AC985670027BE8A /* Snake.m in Sources */ = {isa = PBXBuildFile; fileRef = 28438CDC1AC985670027BE8A /* Snake.m */; };
+		28438CDF1AC98C520027BE8A /* Snake.png in Resources */ = {isa = PBXBuildFile; fileRef = 28438CDE1AC98C520027BE8A /* Snake.png */; };
+		28438CE21AC98DD50027BE8A /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 28438CE11AC98DD50027BE8A /* Game.m */; };
+		28438CEC1AC98ED40027BE8A /* MultiGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 28438CEB1AC98ED40027BE8A /* MultiGame.m */; };
+		28438CEF1AC98F610027BE8A /* SingleGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 28438CEE1AC98F610027BE8A /* SingleGame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +57,15 @@
 		281B55B51AC59520002622ED /* ConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectViewController.m; sourceTree = "<group>"; };
 		281B55B71AC59818002622ED /* MCController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCController.h; sourceTree = "<group>"; };
 		281B55B81AC59818002622ED /* MCController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCController.m; sourceTree = "<group>"; };
+		28438CDB1AC985670027BE8A /* Snake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Snake.h; sourceTree = "<group>"; };
+		28438CDC1AC985670027BE8A /* Snake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Snake.m; sourceTree = "<group>"; };
+		28438CDE1AC98C520027BE8A /* Snake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Snake.png; sourceTree = "<group>"; };
+		28438CE01AC98DD50027BE8A /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		28438CE11AC98DD50027BE8A /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		28438CEA1AC98ED40027BE8A /* MultiGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiGame.h; sourceTree = "<group>"; };
+		28438CEB1AC98ED40027BE8A /* MultiGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiGame.m; sourceTree = "<group>"; };
+		28438CED1AC98F610027BE8A /* SingleGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleGame.h; sourceTree = "<group>"; };
+		28438CEE1AC98F610027BE8A /* SingleGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleGame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,19 +107,12 @@
 		281B55871AC5821A002622ED /* Snake */ = {
 			isa = PBXGroup;
 			children = (
+				28438CF21AC98FAD0027BE8A /* Connect */,
+				28438CF11AC98F8A0027BE8A /* View Controllers */,
+				28438CF01AC98F690027BE8A /* Game Stuff */,
 				281B558C1AC5821A002622ED /* AppDelegate.h */,
 				281B558D1AC5821A002622ED /* AppDelegate.m */,
-				281B558F1AC5821A002622ED /* InitialViewController.h */,
-				281B55901AC5821A002622ED /* InitialViewController.m */,
-				281B55921AC5821A002622ED /* HistoryViewController.h */,
-				281B55931AC5821A002622ED /* HistoryViewController.m */,
 				281B55951AC5821A002622ED /* Main.storyboard */,
-				281B55B41AC59520002622ED /* ConnectViewController.h */,
-				281B55B51AC59520002622ED /* ConnectViewController.m */,
-				281B55B71AC59818002622ED /* MCController.h */,
-				281B55B81AC59818002622ED /* MCController.m */,
-				281B55B11AC5920A002622ED /* ConfigurationViewController.h */,
-				281B55B21AC5920A002622ED /* ConfigurationViewController.m */,
 				281B55981AC5821A002622ED /* Images.xcassets */,
 				281B559A1AC5821A002622ED /* LaunchScreen.xib */,
 				281B55881AC5821A002622ED /* Supporting Files */,
@@ -116,6 +123,7 @@
 		281B55881AC5821A002622ED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				28438CDE1AC98C520027BE8A /* Snake.png */,
 				281B55891AC5821A002622ED /* Info.plist */,
 				281B558A1AC5821A002622ED /* main.m */,
 			);
@@ -137,6 +145,45 @@
 				281B55A61AC5821A002622ED /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		28438CF01AC98F690027BE8A /* Game Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				28438CED1AC98F610027BE8A /* SingleGame.h */,
+				28438CEE1AC98F610027BE8A /* SingleGame.m */,
+				28438CDB1AC985670027BE8A /* Snake.h */,
+				28438CDC1AC985670027BE8A /* Snake.m */,
+				28438CE01AC98DD50027BE8A /* Game.h */,
+				28438CE11AC98DD50027BE8A /* Game.m */,
+				28438CEA1AC98ED40027BE8A /* MultiGame.h */,
+				28438CEB1AC98ED40027BE8A /* MultiGame.m */,
+			);
+			name = "Game Stuff";
+			sourceTree = "<group>";
+		};
+		28438CF11AC98F8A0027BE8A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				281B55B11AC5920A002622ED /* ConfigurationViewController.h */,
+				281B55B21AC5920A002622ED /* ConfigurationViewController.m */,
+				281B558F1AC5821A002622ED /* InitialViewController.h */,
+				281B55901AC5821A002622ED /* InitialViewController.m */,
+				281B55921AC5821A002622ED /* HistoryViewController.h */,
+				281B55931AC5821A002622ED /* HistoryViewController.m */,
+				281B55B41AC59520002622ED /* ConnectViewController.h */,
+				281B55B51AC59520002622ED /* ConnectViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		28438CF21AC98FAD0027BE8A /* Connect */ = {
+			isa = PBXGroup;
+			children = (
+				281B55B71AC59818002622ED /* MCController.h */,
+				281B55B81AC59818002622ED /* MCController.m */,
+			);
+			name = Connect;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +269,7 @@
 			files = (
 				281B55971AC5821A002622ED /* Main.storyboard in Resources */,
 				281B559C1AC5821A002622ED /* LaunchScreen.xib in Resources */,
+				28438CDF1AC98C520027BE8A /* Snake.png in Resources */,
 				281B55991AC5821A002622ED /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,10 +288,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28438CE21AC98DD50027BE8A /* Game.m in Sources */,
 				281B55941AC5821A002622ED /* HistoryViewController.m in Sources */,
+				28438CEC1AC98ED40027BE8A /* MultiGame.m in Sources */,
 				281B55B61AC59520002622ED /* ConnectViewController.m in Sources */,
 				281B558E1AC5821A002622ED /* AppDelegate.m in Sources */,
 				281B55911AC5821A002622ED /* InitialViewController.m in Sources */,
+				28438CDD1AC985670027BE8A /* Snake.m in Sources */,
+				28438CEF1AC98F610027BE8A /* SingleGame.m in Sources */,
 				281B558B1AC5821A002622ED /* main.m in Sources */,
 				281B55B91AC59818002622ED /* MCController.m in Sources */,
 				281B55B31AC5920A002622ED /* ConfigurationViewController.m in Sources */,
@@ -439,6 +491,7 @@
 				281B55AD1AC5821A002622ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		281B55AE1AC5821A002622ED /* Build configuration list for PBXNativeTarget "SnakeTests" */ = {
 			isa = XCConfigurationList;
@@ -447,6 +500,7 @@
 				281B55B01AC5821A002622ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -58,19 +58,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Singleplayer Game" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1CW-qP-rQc">
-                                <rect key="frame" x="57" y="116" width="145" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Snake.png" translatesAutoresizingMaskIntoConstraints="NO" id="0tt-eP-6mj">
+                                <rect key="frame" x="285" y="221" width="30" height="30"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pj1-cT-6dM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1408" y="360"/>
+            <point key="canvasLocation" x="1460" y="16"/>
         </scene>
         <!--Connect-->
         <scene sceneID="teU-bb-PCF">
@@ -149,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oEE-gJ-qzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1408" y="-320"/>
+            <point key="canvasLocation" x="1460" y="-660"/>
         </scene>
         <!--Multiplayer Game-->
         <scene sceneID="GtP-Yb-DZ9">
@@ -175,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fo4-Uh-NRU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2072" y="-320"/>
+            <point key="canvasLocation" x="2124" y="-660"/>
         </scene>
         <!--History-->
         <scene sceneID="wg7-f3-ORb">
@@ -245,10 +242,11 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="32" y="500"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Snake.png" width="30" height="30"/>
         <image name="first" width="30" height="30"/>
     </resources>
 </document>
