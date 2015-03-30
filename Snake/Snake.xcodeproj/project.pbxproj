@@ -18,6 +18,7 @@
 		281B55B31AC5920A002622ED /* ConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281B55B21AC5920A002622ED /* ConfigurationViewController.m */; };
 		281B55B61AC59520002622ED /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281B55B51AC59520002622ED /* ConnectViewController.m */; };
 		281B55B91AC59818002622ED /* MCController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281B55B81AC59818002622ED /* MCController.m */; };
+		28245D601AC9EDF500B95368 /* Food.m in Sources */ = {isa = PBXBuildFile; fileRef = 28245D5F1AC9EDF500B95368 /* Food.m */; };
 		28438CDD1AC985670027BE8A /* Snake.m in Sources */ = {isa = PBXBuildFile; fileRef = 28438CDC1AC985670027BE8A /* Snake.m */; };
 		28438CDF1AC98C520027BE8A /* Snake.png in Resources */ = {isa = PBXBuildFile; fileRef = 28438CDE1AC98C520027BE8A /* Snake.png */; };
 		28438CE21AC98DD50027BE8A /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 28438CE11AC98DD50027BE8A /* Game.m */; };
@@ -58,6 +59,8 @@
 		281B55B51AC59520002622ED /* ConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectViewController.m; sourceTree = "<group>"; };
 		281B55B71AC59818002622ED /* MCController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCController.h; sourceTree = "<group>"; };
 		281B55B81AC59818002622ED /* MCController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCController.m; sourceTree = "<group>"; };
+		28245D5E1AC9EDF500B95368 /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food.h; sourceTree = "<group>"; };
+		28245D5F1AC9EDF500B95368 /* Food.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Food.m; sourceTree = "<group>"; };
 		28438CDB1AC985670027BE8A /* Snake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Snake.h; sourceTree = "<group>"; };
 		28438CDC1AC985670027BE8A /* Snake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Snake.m; sourceTree = "<group>"; };
 		28438CDE1AC98C520027BE8A /* Snake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Snake.png; sourceTree = "<group>"; };
@@ -161,6 +164,8 @@
 				28438CE11AC98DD50027BE8A /* Game.m */,
 				28438CEA1AC98ED40027BE8A /* MultiGame.h */,
 				28438CEB1AC98ED40027BE8A /* MultiGame.m */,
+				28245D5E1AC9EDF500B95368 /* Food.h */,
+				28245D5F1AC9EDF500B95368 /* Food.m */,
 			);
 			name = "Game Stuff";
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28245D601AC9EDF500B95368 /* Food.m in Sources */,
 				28438CE21AC98DD50027BE8A /* Game.m in Sources */,
 				281B55941AC5821A002622ED /* HistoryViewController.m in Sources */,
 				28438CEC1AC98ED40027BE8A /* MultiGame.m in Sources */,

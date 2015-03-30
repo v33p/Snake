@@ -136,11 +136,11 @@
     UIImage *image = [UIImage imageNamed:@"Snake.png"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     
-    [[self body] addObject:imageView];
-    
     CGPoint point = CGPointMake(((UIImageView *) [self body][[[self body] count] -1]).center.x, ((UIImageView *) [self body][[[self body] count] -1]).center.y);
     
     [imageView setCenter:point];
+    
+    [[self body] addObject:imageView];
     
     [[self game] addImage:imageView];
 }
