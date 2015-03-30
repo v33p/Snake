@@ -21,8 +21,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self setGameController:[[SingleGame alloc] initWithView:[self view]]];
-
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeLeft)];
     [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
     [self.view addGestureRecognizer:swipeLeft];
@@ -38,6 +36,8 @@
     UISwipeGestureRecognizer *swipeUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeUp)];
     [swipeUp setDirection:UISwipeGestureRecognizerDirectionUp];
     [self.view addGestureRecognizer:swipeUp];
+    
+    [self setGameController:[[SingleGame alloc] initWithView:[self view]]];   
 }
 
 - (void)didReceiveMemoryWarning {
