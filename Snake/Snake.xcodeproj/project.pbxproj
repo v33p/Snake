@@ -23,6 +23,7 @@
 		28438CE21AC98DD50027BE8A /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 28438CE11AC98DD50027BE8A /* Game.m */; };
 		28438CEC1AC98ED40027BE8A /* MultiGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 28438CEB1AC98ED40027BE8A /* MultiGame.m */; };
 		28438CEF1AC98F610027BE8A /* SingleGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 28438CEE1AC98F610027BE8A /* SingleGame.m */; };
+		28438CF51AC995B00027BE8A /* SingleGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28438CF41AC995B00027BE8A /* SingleGameViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		28438CEB1AC98ED40027BE8A /* MultiGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiGame.m; sourceTree = "<group>"; };
 		28438CED1AC98F610027BE8A /* SingleGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleGame.h; sourceTree = "<group>"; };
 		28438CEE1AC98F610027BE8A /* SingleGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleGame.m; sourceTree = "<group>"; };
+		28438CF31AC995B00027BE8A /* SingleGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleGameViewController.h; sourceTree = "<group>"; };
+		28438CF41AC995B00027BE8A /* SingleGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleGameViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +176,8 @@
 				281B55931AC5821A002622ED /* HistoryViewController.m */,
 				281B55B41AC59520002622ED /* ConnectViewController.h */,
 				281B55B51AC59520002622ED /* ConnectViewController.m */,
+				28438CF31AC995B00027BE8A /* SingleGameViewController.h */,
+				28438CF41AC995B00027BE8A /* SingleGameViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -292,6 +297,7 @@
 				281B55941AC5821A002622ED /* HistoryViewController.m in Sources */,
 				28438CEC1AC98ED40027BE8A /* MultiGame.m in Sources */,
 				281B55B61AC59520002622ED /* ConnectViewController.m in Sources */,
+				28438CF51AC995B00027BE8A /* SingleGameViewController.m in Sources */,
 				281B558E1AC5821A002622ED /* AppDelegate.m in Sources */,
 				281B55911AC5821A002622ED /* InitialViewController.m in Sources */,
 				28438CDD1AC985670027BE8A /* Snake.m in Sources */,

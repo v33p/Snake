@@ -7,18 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "Game.h"
+
+@class Game;
 
 @interface Snake : NSObject
 
-@property (readonly) NSInteger *size;
-
--(void) initialize:(Game *)game;
+-(Snake *) initWithGame:(Game *)game;
 
 -(void) turnLeft;
 -(void) turnRight;
 -(void) turnUp;
--(void) turnBack;
+-(void) turnDown;
 
 -(void) startMoving;
 -(void) stopMoving;

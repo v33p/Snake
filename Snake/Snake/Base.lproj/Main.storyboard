@@ -49,7 +49,7 @@
         <!--Singleplayer Game-->
         <scene sceneID="bb4-2F-thP">
             <objects>
-                <viewController title="Singleplayer Game" id="Gwf-Ad-qAX" sceneMemberID="viewController">
+                <viewController title="Singleplayer Game" id="Gwf-Ad-qAX" customClass="SingleGameViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XJU-Uw-bGl"/>
                         <viewControllerLayoutGuide type="bottom" id="eTa-r7-qcU"/>
@@ -57,11 +57,6 @@
                     <view key="view" contentMode="scaleToFill" id="9dg-1f-HQ0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Snake.png" translatesAutoresizingMaskIntoConstraints="NO" id="0tt-eP-6mj">
-                                <rect key="frame" x="285" y="221" width="30" height="30"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
@@ -246,7 +241,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Snake.png" width="30" height="30"/>
         <image name="first" width="30" height="30"/>
     </resources>
 </document>

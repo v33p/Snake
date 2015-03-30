@@ -7,11 +7,26 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "Snake.h"
+
+#define maxWidth 300
+#define maxHeight 600
+
+@class Snake;
 
 @interface Game : NSObject
 
--(void) startGame;
+@property (readonly) int blockWidth;
+@property (readonly) int blockHeight;
+
+@property Snake *snake;
+
+-(Game *) initWithView: (UIView *)view;
+
 -(void) pauseGame;
 -(void) endGame;
+
+-(void) addImage: (UIImageView *)image;
 
 @end
