@@ -52,4 +52,20 @@
     
 }
 
+-(void) moveSnakeLeft {
+    [[self snake] turnLeft];
+}
+
+-(void) moveSnakeRight {
+    [[self snake] turnRight];
+}
+
+-(void) moveSnakeDown {
+    [[self snake] turnDown];
+}
+
+-(void) moveSnakeUp {
+    [[self snake] turnUp];
+}
+
 @end

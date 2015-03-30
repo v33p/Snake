@@ -29,4 +29,9 @@
 
 -(void) addImage: (UIImageView *)image;
 
+-(void) moveSnakeLeft;
+-(void) moveSnakeRight;
+-(void) moveSnakeDown;
+-(void) moveSnakeUp;
+
 @end

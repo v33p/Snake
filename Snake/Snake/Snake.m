@@ -43,11 +43,22 @@
         
         [self placeSnake:[self generateRandomPosition]];
         
-        [self setAxisX:1];
-        [self setAxisY:0];
+        [self setAxisX:0];
+        [self setAxisY:1];
         [self setVerticalMove:NO];
         
         [[self game] addImage:imageView];
+        
+        for (int i = 1; i < 5; i++) {
+            imageView = [[UIImageView alloc] initWithImage:image];
+            [[self body] addObject:imageView];
+            CGPoint point = CGPointMake(((UIImageView *) [self body][0]).center.x,
+                                        ((UIImageView *) [self body][0]).center.y);
+            [imageView setCenter:point];
+            [[self game] addImage:imageView];
+        }
+        
+        
         
     }
     
@@ -115,7 +126,7 @@
 -(void) turnRight {
     if ([self verticalMove]) {
         [self setAxisY:0];
-        [self setAxisX:-1];
+        [self setAxisX:1];
         [self setVerticalMove:NO];
     }
 }
