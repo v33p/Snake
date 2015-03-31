@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelConnected;
 @property (weak, nonatomic) IBOutlet UIButton *buttonSearch;
 @property (weak, nonatomic) IBOutlet UIButton *buttonStart;
+@property (weak, nonatomic) IBOutlet UILabel *labelWaiting;
 
 @property (nonatomic, strong) AppDelegate *appDelegate;
 
@@ -83,6 +84,10 @@
 }
 
 #pragma mark - Button Action
+
+- (IBAction)startGame:(id)sender {
+    NSLog(@"Clicked");
+}
 
 - (IBAction)searchForPlayers:(id)sender {
     

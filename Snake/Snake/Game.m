@@ -31,16 +31,21 @@
         [self setBlockWidth:image.size.width];
         
         [self setView:view];
-        [self setSnake:[[Snake alloc] initWithGame: (Game *)self]];
-        [self setFood:[[Food alloc] initWithGame:(Game *)self]];
         
-        [[self snake] startMoving];
+        [self startGame];
     }
     
     return self;
 }
 
 #pragma mark - Game Control
+
+-(void) startGame {
+    [self setSnake:[[Snake alloc] initWithGame: (Game *)self]];
+    [self setFood:[[Food alloc] initWithGame:(Game *)self]];
+    
+    [[self snake] startMoving];
+}
 
 -(void) pauseGame {
     

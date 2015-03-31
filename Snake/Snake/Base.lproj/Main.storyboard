@@ -126,9 +126,15 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="z5M-SU-dLa" kind="show" id="eKF-Cv-L3V"/>
+                                    <action selector="startGame:" destination="tIX-IM-LMi" eventType="touchUpInside" id="6iY-pa-BJW"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aguardando outro jogador.." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiB-y3-aFN">
+                                <rect key="frame" x="28" y="166" width="210" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -137,6 +143,7 @@
                         <outlet property="buttonSearch" destination="nev-rM-Oc7" id="5Qq-Pf-of5"/>
                         <outlet property="buttonStart" destination="gRA-K7-AY8" id="hTM-Nf-6Mf"/>
                         <outlet property="labelConnected" destination="QUo-DB-YsT" id="Pg2-N9-YZf"/>
+                        <outlet property="labelWaiting" destination="oiB-y3-aFN" id="4SY-X8-Wxq"/>
                         <outlet property="switchVisible" destination="Dwf-Ad-c9f" id="GJB-Fg-Osh"/>
                     </connections>
                 </viewController>
