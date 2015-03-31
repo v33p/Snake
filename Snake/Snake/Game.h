@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "Snake.h"
+#import "Food.h"
 
 #define maxWidth 300
 #define maxHeight 600
 
 @class Snake;
+@class Food;
 
 @interface Game : NSObject
 
@@ -21,6 +23,7 @@
 @property (readonly) int blockHeight;
 
 @property Snake *snake;
+@property Food *food;
 
 -(Game *) initWithView: (UIView *)view;
 
@@ -33,5 +36,7 @@
 -(void) moveSnakeRight;
 -(void) moveSnakeDown;
 -(void) moveSnakeUp;
+
+-(void) checkSnakePosition: (CGPoint) position;
 
 @end

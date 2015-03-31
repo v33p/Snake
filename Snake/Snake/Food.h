@@ -7,7 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "Game.h"
+#import "Snake.h"
+
+@class Game;
+@class Snake;
 
 @interface Food : NSObject
+
+-(Food *) initWithGame: (Game *) game;
+
+-(void) placeFood;
+-(CGPoint) position;
+-(void) foodWasEatenBySnake: (Snake *)snake;
 
 @end

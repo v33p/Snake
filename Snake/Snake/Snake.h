@@ -16,13 +16,17 @@
 
 -(Snake *) initWithGame:(Game *)game;
 
+-(void) placeSnake: (CGPoint) position;
+
+-(void) startMoving;
+-(void) stopMoving;
+
 -(void) turnLeft;
 -(void) turnRight;
 -(void) turnUp;
 -(void) turnDown;
 
--(void) startMoving;
--(void) stopMoving;
+-(BOOL) compareBodyWithHeadPosition: (CGPoint) head;
 
 -(void) enlarge;
 
