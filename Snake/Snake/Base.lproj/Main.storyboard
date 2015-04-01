@@ -223,7 +223,7 @@
         <!--Multiplayer Game-->
         <scene sceneID="GtP-Yb-DZ9">
             <objects>
-                <viewController title="Multiplayer Game" id="z5M-SU-dLa" sceneMemberID="viewController">
+                <viewController title="Multiplayer Game" id="z5M-SU-dLa" customClass="MultiGameViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wns-5d-OzX"/>
                         <viewControllerLayoutGuide type="bottom" id="azD-zl-t7m"/>

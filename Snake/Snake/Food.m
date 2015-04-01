@@ -30,7 +30,7 @@
         
         [[self game] addImage:[self food]];
         
-        [self placeFood];
+        [self placeFoodRandom];
     }
     
     return self;
@@ -38,9 +38,13 @@
 
 #pragma mark - Position Controllers
 
--(void) placeFood {
+-(void) placeFoodRandom {
     CGPoint position = CGPointMake([[self game] blockWidth] * (arc4random() % (int)(maxWidth/[[self game] blockWidth])) + 30,
                                    [[self game] blockHeight] * (arc4random() % (int)((maxHeight)/[[self game] blockHeight])) +30);
+    [[self food] setCenter:position];
+}
+
+-(void) placeFoodAtPosition: (CGPoint) position {
     [[self food] setCenter:position];
 }
 
@@ -52,7 +56,7 @@
 
 -(void) foodWasEatenBySnake: (Snake *)snake {
     [snake enlarge];
-    [self placeFood];
+    [self placeFoodRandom];
 }
 
 @end

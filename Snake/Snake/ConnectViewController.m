@@ -8,6 +8,7 @@
 
 #import "ConnectViewController.h"
 #import "AppDelegate.h"
+#import "HostManager.h"
 
 @interface ConnectViewController ()
 
@@ -21,6 +22,8 @@
 @property BOOL ready;
 
 @property (nonatomic, strong) AppDelegate *appDelegate;
+
+@property HostManager *hostManager;
 
 -(void)peerDidChangeStateWithNotification:(NSNotification *)notification;
 -(void)didReceiveDataWithNotification:(NSNotification *)notification;
@@ -48,6 +51,10 @@
                                              selector:@selector(didReceiveDataWithNotification:)
                                                  name:@"MCDidReceiveDataNotification"
                                                object:nil];
+
+    //iniciando host manager
+    [self setHostManager:[HostManager sharedManager]];
+    
     
 }
 
@@ -72,43 +79,48 @@
 
 -(void)peerDidChangeStateWithNotification:(NSNotification *)notification{
     
-     NSLog(@"state changed");
+    NSLog(@"state changed");
     
     MCPeerID *peerID = [[notification userInfo] objectForKey:@"peerID"];
     NSString *peerDisplayName = peerID.displayName;
     MCSessionState state = [[[notification userInfo] objectForKey:@"state"] intValue];
     
-    BOOL peerExist;
-    
-    if (state != MCSessionStateConnecting) {
-        if (state == MCSessionStateConnected) {
-            [[self labelConnected] setText:peerDisplayName];
-            peerExist = YES;
-            NSLog(@"Connected");
-        }
-        else if (state == MCSessionStateNotConnected){
-            NSLog(@"Not connected");
-            [[self labelConnected] setText:@" "];
-            peerExist = NO;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        BOOL peerExist;
+        if (state != MCSessionStateConnecting) {
+            if (state == MCSessionStateConnected) {
+                [[self labelConnected] setText:peerDisplayName];
+                peerExist = YES;
+                NSLog(@"Connected");
+            }
+            else if (state == MCSessionStateNotConnected){
+                NSLog(@"Not connected");
+                [[self labelConnected] setText:@" "];
+                [[HostManager sharedManager] setIsHost:NO];
+                peerExist = NO;
+            }
+            
+            [[self buttonDisconnect] setEnabled:peerExist];
+            [[self buttonStart] setEnabled:peerExist];
+            [[self buttonSearch] setEnabled:!peerExist];
         }
         
-        [[self buttonDisconnect] setEnabled:peerExist];
-        [[self buttonStart] setEnabled:peerExist];
-        [[self buttonSearch] setEnabled:!peerExist];
-    }
+    });
 }
 
 -(void)didReceiveDataWithNotification:(NSNotification *)notification {
-    
-    NSLog(@"Ready");
-    
-    if (![self ready]) {
-        [self setReady:YES];
-    }
-    else {
-        [self performSegueWithIdentifier:@"connectSegue"
-                                  sender:self];
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"Ready");
+        
+        if (![self ready]) {
+            [self setReady:YES];
+        }
+        else {
+            [self performSegueWithIdentifier:@"connectSegue"
+                                      sender:self];
+        }
+    });
 }
 
 #pragma mark - Button Action
@@ -131,12 +143,17 @@
     if ([self ready]) {
         [self performSegueWithIdentifier:@"connectSegue"
                                   sender:self];
+        [[HostManager sharedManager] setIsHost:NO];
     }
     else {
+        [[HostManager sharedManager] setIsHost:YES];
         [[self labelWaiting] setHidden:NO];
         [[self buttonStart] setHidden:YES];
         [self setReady:YES];
     }
+
+    NSLog (@"%@", [[HostManager sharedManager] isHost]);
+    
 }
 
 - (IBAction)searchForPlayers:(id)sender {
@@ -166,6 +183,7 @@
     [[self buttonStart] setEnabled:NO];
     
     [[[[self appDelegate] mcController] session] disconnect];
+    [[self hostManager] setIsHost:NO];
     
     [[self labelConnected] setText:@" "];
     

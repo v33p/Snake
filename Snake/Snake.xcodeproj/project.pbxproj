@@ -29,6 +29,7 @@
 		28A7A52D1ACAF89E00558594 /* Snake(18).png in Resources */ = {isa = PBXBuildFile; fileRef = 28A7A52C1ACAF89E00558594 /* Snake(18).png */; };
 		28A7A52F1ACAF8AA00558594 /* Food-2(18).png in Resources */ = {isa = PBXBuildFile; fileRef = 28A7A52E1ACAF8AA00558594 /* Food-2(18).png */; };
 		28CD05EE1ACB65F90018ABA7 /* MultiGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28CD05ED1ACB65F90018ABA7 /* MultiGameViewController.m */; };
+		28DC042A1ACC3946000524A8 /* HostManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DC04291ACC3946000524A8 /* HostManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,8 @@
 		28A7A52E1ACAF8AA00558594 /* Food-2(18).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Food-2(18).png"; sourceTree = "<group>"; };
 		28CD05EC1ACB65F90018ABA7 /* MultiGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiGameViewController.h; sourceTree = "<group>"; };
 		28CD05ED1ACB65F90018ABA7 /* MultiGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiGameViewController.m; sourceTree = "<group>"; };
+		28DC04281ACC3946000524A8 /* HostManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostManager.h; sourceTree = "<group>"; };
+		28DC04291ACC3946000524A8 /* HostManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				281B55B71AC59818002622ED /* MCController.h */,
+				28DC04281ACC3946000524A8 /* HostManager.h */,
+				28DC04291ACC3946000524A8 /* HostManager.m */,
 				281B55B81AC59818002622ED /* MCController.m */,
 			);
 			name = Connect;
@@ -329,6 +334,7 @@
 				281B558B1AC5821A002622ED /* main.m in Sources */,
 				281B55B91AC59818002622ED /* MCController.m in Sources */,
 				281B55B31AC5920A002622ED /* ConfigurationViewController.m in Sources */,
+				28DC042A1ACC3946000524A8 /* HostManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

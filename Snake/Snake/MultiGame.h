@@ -8,7 +8,10 @@
 
 #import "Game.h"
 #import "AppDelegate.h"
+#import "HostManager.h"
 
 @interface MultiGame : Game
+
+-(MultiGame *) initWithView: (UIView *) view andController: (UIViewController *) viewController;
 
 @end

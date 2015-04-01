@@ -18,7 +18,8 @@
 
 -(Food *) initWithGame: (Game *) game;
 
--(void) placeFood;
+-(void) placeFoodRandom;
+-(void) placeFoodAtPosition:(CGPoint)position;
 -(CGPoint) position;
 -(void) foodWasEatenBySnake: (Snake *)snake;
 

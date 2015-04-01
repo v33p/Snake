@@ -36,7 +36,8 @@
     [swipeUp setDirection:UISwipeGestureRecognizerDirectionUp];
     [self.view addGestureRecognizer:swipeUp];
     
-    [self setGameController:[[MultiGame alloc] initWithView:[self view]]];
+    [self setGameController:[[MultiGame alloc] initWithView:[self view] andController:self]];
+
 }
 
 - (void)didReceiveMemoryWarning {

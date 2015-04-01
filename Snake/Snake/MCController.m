@@ -9,6 +9,10 @@
 #import "MCController.h"
 #import "MultiGame.h"
 
+@interface MCController()
+
+@end
+
 @implementation MCController
 
 #pragma mark - NSObject
