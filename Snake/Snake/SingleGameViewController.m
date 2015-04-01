@@ -65,6 +65,13 @@
     [[self gameController] moveSnakeUp];
 }
 
+- (IBAction)didPinch:(id)sender {
+    if (![self isPaused]) {
+        NSLog(@"pause");
+        [[self gameController] pauseGame];
+        [self setIsPaused:YES];
+    }
+}
 
 // *
 -(void) doubleTab {

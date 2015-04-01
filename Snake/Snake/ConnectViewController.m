@@ -51,7 +51,7 @@
                                              selector:@selector(didReceiveDataWithNotification:)
                                                  name:@"MCDidReceiveDataNotification"
                                                object:nil];
-
+    
     //iniciando host manager
     [self setHostManager:[HostManager sharedManager]];
     
@@ -113,12 +113,18 @@
 
 -(void)didReceiveDataWithNotification:(NSNotification *)notification {
     dispatch_async(dispatch_get_main_queue(), ^{
-        if (![self ready]) {
-            [self setReady:YES];
-        }
-        else {
-            [self performSegueWithIdentifier:@"connectSegue"
-                                      sender:self];
+        NSData *receivedData = [[notification userInfo] objectForKey:@"data"];
+        NSString *receivedText = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
+        
+        // place food
+        if ([receivedText hasPrefix:@"!"]) {
+            if (![self ready]) {
+                [self setReady:YES];
+            }
+            else {
+                [self performSegueWithIdentifier:@"connectSegue"
+                                          sender:self];
+            }
         }
     });
 }
@@ -155,7 +161,7 @@
         [[self buttonStart] setHidden:YES];
         [self setReady:YES];
     }
-
+    
     NSLog([[self hostManager] isHost] ? @"1 - Yes" : @"1 - No");
     
 }

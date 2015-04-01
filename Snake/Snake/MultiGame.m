@@ -14,6 +14,8 @@
 @property AppDelegate *appDelegate;
 @property (nonatomic, strong) HostManager *hostManager;
 
+@property BOOL hasStarted;
+
 @end
 
 @implementation MultiGame
@@ -46,7 +48,10 @@
         
         [self setHostManager:[HostManager sharedManager]];
         
+        [self setHasStarted:NO];
+        
         [self startGame];
+        
     }
     
     return self;
@@ -54,20 +59,23 @@
 
 -(void) startGame {
     
-    NSLog(@"start game");
-    
-    [self setSnake:[[Snake alloc] initWithGame: (Game *)self]];
-    
-    [self setFood: [[Food alloc] initWithGame:(Game *) self]];
-    
-    NSLog([[self hostManager] isHost] ? @"2 - Yes" : @"2 - No");
-    
-    if ([[self hostManager] isHost]) {
-        NSString *data = [@"@" stringByAppendingString:[self convertPositionIntoString:[[self food] position]]];
-        [self sendData:data];
+    if (![self hasStarted]) {
+        [self setHasStarted:YES];
+        NSLog(@"start game");
+        
+        [self setSnake:[[Snake alloc] initWithGame: (Game *)self]];
+        
+        [self setFood: [[Food alloc] initWithGame:(Game *) self]];
+        
+        NSLog([[self hostManager] isHost] ? @"2 - Yes" : @"2 - No");
+        
+        if ([[self hostManager] isHost]) {
+            NSString *data = [@"@" stringByAppendingString:[self convertPositionIntoString:[[self food] position]]];
+            [self sendData:data];
+        }
+        
+        [[self snake] startMoving];
     }
-    
-    [[self snake] startMoving];
 }
 
 -(void) pauseGame {
