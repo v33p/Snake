@@ -49,7 +49,7 @@
     // compara se a posicoa da cabeca da cobra com a comida
     else if (position.x == [[self food] position].x && position.y == [[self food] position].y) {
         [[self food] foodWasEatenBySnake:[self snake]];
-        [[self snake] changingSpeedByMultiplyingByFactor:0.95];
+        [[self snake] changingSpeedByAddingByFactor:-0.01];
         NSLog(@"%f", [[self snake] speed]);
         [self setScore:[self score]+1];
     }

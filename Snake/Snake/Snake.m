@@ -188,4 +188,14 @@
                                                         repeats:YES]];
 }
 
+-(void) changingSpeedByAddingByFactor: (double) factor {
+    [[self snakeTimer] invalidate];
+    [self setSpeed:[self speed] + factor];
+    [self setSnakeTimer:[NSTimer scheduledTimerWithTimeInterval:[self speed]
+                                                         target:self
+                                                       selector:@selector(move)
+                                                       userInfo:nil
+                                                        repeats:YES]];
+}
+
 @end

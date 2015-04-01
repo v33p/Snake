@@ -32,4 +32,5 @@
 
 -(void) enlarge;
 -(void) changingSpeedByMultiplyingByFactor:(double)factor;
+-(void) changingSpeedByAddingByFactor:(double)factor;
 @end
