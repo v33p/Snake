@@ -10,4 +10,7 @@
 
 @interface SingleGameViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIView *endGameView;
+@property (weak, nonatomic) IBOutlet UILabel *score;
+
 @end

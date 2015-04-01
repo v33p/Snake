@@ -22,7 +22,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Gwf-Ad-qAX" kind="show" id="Od3-8Q-qRJ"/>
+                                    <segue destination="Gwf-Ad-qAX" kind="presentation" animates="NO" id="Od3-8Q-qRJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgu-Mt-u2T">
@@ -31,7 +31,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="tIX-IM-LMi" kind="show" id="kDh-hM-6ej"/>
+                                    <segue destination="tIX-IM-LMi" kind="presentation" animates="NO" id="kDh-hM-6ej"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oTg-uv-OfI">
@@ -57,34 +57,58 @@
                     <view key="view" contentMode="scaleToFill" id="9dg-1f-HQ0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vx9-1m-e09">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bMn-16-tid">
+                                        <rect key="frame" x="37" y="93" width="300" height="300"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R51-DL-LwX">
+                                                <rect key="frame" x="188" y="239" width="73" height="30"/>
+                                                <state key="normal" title="Play Again">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2CL-Ng-mgG">
+                                                <rect key="frame" x="39" y="239" width="30" height="30"/>
+                                                <state key="normal" title="Exit">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="9pv-A4-QxB" kind="presentation" animates="NO" id="lKl-Zv-xFR"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C51-nT-djV">
+                                                <rect key="frame" x="31" y="75" width="239" height="150"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                                                <color key="textColor" red="0.71291035353535359" green="0.71291035353535359" blue="0.71291035353535359" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Over" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0b-wW-DUe">
+                                                <rect key="frame" x="106" y="46" width="88" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                     </view>
                     <connections>
-                        <segue destination="ZP2-Qt-cHY" kind="show" identifier="singleGameSegue" id="qZd-Gu-KIc"/>
+                        <outlet property="endGameView" destination="vx9-1m-e09" id="sAp-bQ-xPF"/>
+                        <outlet property="score" destination="C51-nT-djV" id="USw-wa-3Hq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pj1-cT-6dM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1460" y="16"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Mwu-ZR-bEV">
-            <objects>
-                <viewController id="ZP2-Qt-cHY" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="v7I-Zk-r3c"/>
-                        <viewControllerLayoutGuide type="bottom" id="yGZ-J3-FSr"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bRP-yx-SGN">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HgR-Ge-pAr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2124" y="16"/>
         </scene>
         <!--Connect-->
         <scene sceneID="teU-bb-PCF">
@@ -166,7 +190,7 @@
                         <outlet property="labelConnected" destination="QUo-DB-YsT" id="Pg2-N9-YZf"/>
                         <outlet property="labelWaiting" destination="oiB-y3-aFN" id="4SY-X8-Wxq"/>
                         <outlet property="switchVisible" destination="Dwf-Ad-c9f" id="GJB-Fg-Osh"/>
-                        <segue destination="z5M-SU-dLa" kind="show" identifier="connectSegue" id="qRh-7q-lfC"/>
+                        <segue destination="z5M-SU-dLa" kind="presentation" identifier="connectSegue" animates="NO" id="qRh-7q-lfC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oEE-gJ-qzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -186,31 +210,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <segue destination="xYM-Fw-gtj" kind="show" identifier="multiGameSegue" id="Txx-6E-DFe"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fo4-Uh-NRU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2124" y="-660"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="XXe-cN-MSU">
-            <objects>
-                <viewController id="xYM-Fw-gtj" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Huw-tP-drC"/>
-                        <viewControllerLayoutGuide type="bottom" id="Edi-ph-m8v"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gpY-ql-eHs">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aoz-vN-wJH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2792" y="-660"/>
         </scene>
         <!--History-->
         <scene sceneID="wg7-f3-ORb">
@@ -286,4 +289,7 @@
     <resources>
         <image name="first" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="lKl-Zv-xFR"/>
+    </inferredMetricsTieBreakers>
 </document>

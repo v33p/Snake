@@ -14,9 +14,11 @@
 
 @interface Snake : NSObject
 
+@property (readonly) double speed;
+
 -(Snake *) initWithGame:(Game *)game;
 
--(void) placeSnake: (CGPoint) position;
+-(void) placeSnake:(CGPoint)position;
 
 -(void) startMoving;
 -(void) stopMoving;
@@ -26,8 +28,8 @@
 -(void) turnUp;
 -(void) turnDown;
 
--(BOOL) compareBodyWithHeadPosition: (CGPoint) head;
+-(BOOL) compareBodyWithHeadPosition:(CGPoint)head;
 
 -(void) enlarge;
-
+-(void) changingSpeedByMultiplyingByFactor:(double)factor;
 @end

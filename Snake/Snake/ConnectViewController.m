@@ -72,7 +72,7 @@
 
 -(void)peerDidChangeStateWithNotification:(NSNotification *)notification{
     
-    NSLog(@"teste");
+     NSLog(@"state changed");
     
     MCPeerID *peerID = [[notification userInfo] objectForKey:@"peerID"];
     NSString *peerDisplayName = peerID.displayName;
@@ -84,8 +84,10 @@
         if (state == MCSessionStateConnected) {
             [[self labelConnected] setText:peerDisplayName];
             peerExist = YES;
+            NSLog(@"Connected");
         }
         else if (state == MCSessionStateNotConnected){
+            NSLog(@"Not connected");
             [[self labelConnected] setText:@" "];
             peerExist = NO;
         }
@@ -112,6 +114,20 @@
 #pragma mark - Button Action
 
 - (IBAction)startGame:(id)sender {
+    
+    NSData *dataToSend = [@"!start" dataUsingEncoding:NSUTF8StringEncoding];
+    NSArray *allPeers = [[[[self appDelegate] mcController] session ] connectedPeers];
+    NSError *error;
+    
+    [[[[self appDelegate] mcController] session] sendData:dataToSend
+                                                  toPeers:allPeers
+                                                 withMode:MCSessionSendDataReliable
+                                                    error:&error];
+    
+    if (error) {
+        NSLog(@"%@", [error localizedDescription]);
+    }
+    
     if ([self ready]) {
         [self performSegueWithIdentifier:@"connectSegue"
                                   sender:self];
@@ -119,6 +135,7 @@
     else {
         [[self labelWaiting] setHidden:NO];
         [[self buttonStart] setHidden:YES];
+        [self setReady:YES];
     }
 }
 

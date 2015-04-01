@@ -7,7 +7,18 @@
 //
 
 #import "Game.h"
+#import "SingleGameViewController.h"
+
+@class SingleGameViewController;
 
 @interface SingleGame : Game
+
+-(SingleGame *) initWithView: (UIView *)view andViewController: (SingleGameViewController *) viewController;
+
+//-(void) startGame;
+-(void) pauseGame;
+-(void) endGame;
+
+-(void) checkSnakePosition:(CGPoint)position;
 
 @end

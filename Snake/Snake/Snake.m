@@ -21,6 +21,8 @@
 
 @property bool verticalMove;
 
+@property (readwrite) double speed;
+
 -(void) move;
 
 @end
@@ -61,6 +63,8 @@
             [[self game] addImage:imageView];
         }
         
+        [self setSpeed:0.2];
+        
     }
     
     return self;
@@ -91,13 +95,11 @@
     
     [((UIImageView *) [self body][0]) setCenter:point];
     
-    NSLog(@"%f, %f", [((UIImageView *) [self body][0]) center].x, [((UIImageView *) [self body][0]) center].y);
-    
     [[self game] checkSnakePosition:[((UIImageView *) [self body][0]) center]];
 }
 
 -(void) startMoving {
-    [self setSnakeTimer:[NSTimer scheduledTimerWithTimeInterval:0.2
+    [self setSnakeTimer:[NSTimer scheduledTimerWithTimeInterval:[self speed]
                                                          target:self
                                                        selector:@selector(move)
                                                        userInfo:nil
@@ -105,6 +107,7 @@
 }
 
 -(void) stopMoving {
+    [[self snakeTimer] invalidate];
     [self setAxisX:0];
     [self setAxisY:0];
 }
@@ -173,6 +176,16 @@
     [[self body] addObject:imageView];
     
     [[self game] addImage:imageView];
+}
+
+-(void) changingSpeedByMultiplyingByFactor: (double) factor {
+    [[self snakeTimer] invalidate];
+    [self setSpeed:[self speed] * factor];
+    [self setSnakeTimer:[NSTimer scheduledTimerWithTimeInterval:[self speed]
+                                                         target:self
+                                                       selector:@selector(move)
+                                                       userInfo:nil
+                                                        repeats:YES]];
 }
 
 @end
