@@ -97,7 +97,7 @@
             else if (state == MCSessionStateNotConnected){
                 NSLog(@"Not connected");
                 [[self labelConnected] setText:@" "];
-                [[HostManager sharedManager] setIsHost:NO];
+                [[self hostManager] setIsHost:NO];
                 peerExist = NO;
             }
             
@@ -143,16 +143,16 @@
     if ([self ready]) {
         [self performSegueWithIdentifier:@"connectSegue"
                                   sender:self];
-        [[HostManager sharedManager] setIsHost:NO];
+        [[self hostManager] setIsHost:NO];
     }
     else {
-        [[HostManager sharedManager] setIsHost:YES];
+        [[self hostManager] setIsHost:YES];
         [[self labelWaiting] setHidden:NO];
         [[self buttonStart] setHidden:YES];
         [self setReady:YES];
     }
 
-    NSLog (@"%@", [[HostManager sharedManager] isHost]);
+    NSLog([[self hostManager] isHost] ? @"1 - Yes" : @"1 - No");
     
 }
 

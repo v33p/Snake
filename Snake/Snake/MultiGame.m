@@ -51,8 +51,9 @@
     
     [self setFood: [[Food alloc] initWithGame:(Game *) self]];
     
+    NSLog([[self hostManager] isHost] ? @"2 - Yes" : @"2 - No");
     
-    if ([[HostManager sharedManager] isHost]) {
+    if ([[self hostManager] isHost]) {
         NSString *data = [@"@" stringByAppendingString:[self convertPositionIntoString:[[self food] position]]];
         [self sendData:data];
     }
@@ -82,10 +83,18 @@
         [self endGame];
     }
     
-//    else if (position.x == [[self food] position].x &&
-//             position.y == [[self food] position].y) {
-//        //multipeer comunication: outro sofre efeito
-//    }
+    else if (position.x == [[self food] position].x &&
+             position.y == [[self food] position].y) {
+        // multipeer comunication: outro sofre efeito
+        // troca comida de lugar
+        [[self food] placeFoodRandom];
+        NSString *data = [@"@" stringByAppendingString:[self convertPositionIntoString:[[self food] position]]];
+        [self sendData:data];
+        
+        // outro sofre efeito
+        data = @"#";
+        [self sendData:data];
+    }
     
 }
 
@@ -138,6 +147,12 @@
             receivedText = [receivedText stringByReplacingOccurrencesOfString:@"@" withString:@""];
             [[self food] placeFoodAtPosition:[self convertStringIntoCGPoint:receivedText]];
         }
+        // snake enlarge
+        else if ([receivedText hasPrefix:@"#"]) {
+            [[self snake] enlarge];
+            [[self snake] changingSpeedByAddingByFactor:-0.01];
+        }
+        
     });
 }
 
