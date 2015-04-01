@@ -32,6 +32,8 @@
     [[[self viewController] view] addSubview:[[self viewController] endGameView]];
     [[[self viewController] endGameView] setHidden:NO];
     [[[self viewController] score] setText:[[[NSNumber alloc] initWithInt:[self score]] stringValue]];
+    // trocar o botao para resume
+    // trocar o label de gameover
     
     [[self snake] stopMoving];
 }
@@ -53,6 +55,10 @@
     [[[self viewController] view] addSubview:[[self viewController] endGameView]];
     [[[self viewController] endGameView] setHidden:NO];
     [[[self viewController] score] setText:[[[NSNumber alloc] initWithInt:[self score]] stringValue]];
+    
+    // trocar o botao para resume
+    // trocar o label de gameover
+    
     [[self snake] stopMoving];
     NSLog(@"Fim de Jogo");
 }

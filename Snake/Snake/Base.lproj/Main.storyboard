@@ -89,6 +89,9 @@
                                                 <state key="normal" title="Play Again">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="secondButtonClicked:" destination="Gwf-Ad-qAX" eventType="touchUpInside" id="JkC-j8-Idw"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2CL-Ng-mgG">
                                                 <rect key="frame" x="39" y="239" width="30" height="30"/>
@@ -96,9 +99,6 @@
                                                 <state key="normal" title="Exit">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <connections>
-                                                    <segue destination="49e-Tb-3d3" kind="presentation" animates="NO" id="kXi-WN-FTJ"/>
-                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C51-nT-djV">
                                                 <rect key="frame" x="31" y="75" width="239" height="150"/>
@@ -121,6 +121,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="j25-pU-wqx" appends="YES" id="oVO-xt-I5Q"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="endGameView" destination="rPw-fL-D2M" id="rJk-r5-hki"/>
@@ -128,9 +131,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pj1-cT-6dM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pinchGestureRecognizer id="dUe-Da-z7j">
+                <pinchGestureRecognizer id="j25-pU-wqx">
                     <connections>
-                        <action selector="didPinch:" destination="Gwf-Ad-qAX" id="L63-lD-A2l"/>
+                        <action selector="didPinch:" destination="Gwf-Ad-qAX" id="bMb-AJ-6ZG"/>
                     </connections>
                 </pinchGestureRecognizer>
             </objects>

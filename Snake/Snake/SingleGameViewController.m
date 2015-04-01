@@ -66,24 +66,21 @@
 }
 
 - (IBAction)didPinch:(id)sender {
+    NSLog(@"pause");
     if (![self isPaused]) {
-        NSLog(@"pause");
         [[self gameController] pauseGame];
         [self setIsPaused:YES];
     }
 }
 
-// *
--(void) doubleTab {
-    NSLog(@"pause");
-    
+- (IBAction)secondButtonClicked:(id)sender {
     if ([self isPaused]) {
-        [[self gameController] pauseGame];
-    }
-    else {
+        [self setIsPaused:NO];
         [[self gameController] resumeGame];
     }
-    [self setIsPaused:![self isPaused]];
+    else {
+        // restart game
+    }
 }
 
 /*
