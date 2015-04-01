@@ -12,7 +12,7 @@
 
 @property UIViewController *viewController;
 @property AppDelegate *appDelegate;
-@property HostManager *hostManager;
+@property (nonatomic, strong) HostManager *hostManager;
 
 @end
 
@@ -21,9 +21,16 @@
 #pragma mark - Game Control
 
 -(MultiGame *) initWithView: (UIView *) view andController: (UIViewController *) viewController {
-    self = [super initWithView:view];
+    self = [super init];
     
     if (self) {
+        UIImage *image = [UIImage imageNamed:@"Snake(18).png"];
+        
+        [self setBlockHeight:image.size.height];
+        [self setBlockWidth:image.size.width];
+        
+        [self setView:view];
+        
         [self setViewController:viewController];
         [self setAppDelegate:(AppDelegate *)[[UIApplication sharedApplication] delegate]];
         
@@ -38,6 +45,8 @@
                                                    object:nil];
         
         [self setHostManager:[HostManager sharedManager]];
+        
+        [self startGame];
     }
     
     return self;
@@ -45,7 +54,7 @@
 
 -(void) startGame {
     
-    NSLog(@"startGame");
+    NSLog(@"start game");
     
     [self setSnake:[[Snake alloc] initWithGame: (Game *)self]];
     
@@ -85,6 +94,8 @@
     
     else if (position.x == [[self food] position].x &&
              position.y == [[self food] position].y) {
+        NSLog(@"head.pos == food.pos: %f, %f", position.x, position.y);
+        
         // multipeer comunication: outro sofre efeito
         // troca comida de lugar
         [[self food] placeFoodRandom];
@@ -140,7 +151,7 @@
         NSData *receivedData = [[notification userInfo] objectForKey:@"data"];
         NSString *receivedText = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
         
-        NSLog(@"%@", receivedText);
+        NSLog(@"informacao recebida: %@", receivedText);
         
         // place food
         if ([receivedText hasPrefix:@"@"]) {
@@ -157,7 +168,7 @@
 }
 
 -(void) sendData: (NSString *) data {
-    NSLog(@"%@", data);
+    NSLog(@"informacao enviada: %@", data);
     NSData *dataToSend = [data dataUsingEncoding:NSUTF8StringEncoding];
     NSArray *allPeers = [[[[self appDelegate] mcController] session ] connectedPeers];
     NSError *error;

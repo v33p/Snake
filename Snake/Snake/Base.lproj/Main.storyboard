@@ -77,11 +77,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vx9-1m-e09">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rPw-fL-D2M">
+                                <rect key="frame" x="0.0" y="0.0" width="678" height="864"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bMn-16-tid">
-                                        <rect key="frame" x="37" y="93" width="300" height="300"/>
+                                        <rect key="frame" x="26" y="133" width="300" height="300"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R51-DL-LwX">
                                                 <rect key="frame" x="176" y="239" width="85" height="30"/>
@@ -97,7 +97,7 @@
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="9pv-A4-QxB" kind="presentation" animates="NO" id="lKl-Zv-xFR"/>
+                                                    <segue destination="49e-Tb-3d3" kind="presentation" animates="NO" id="kXi-WN-FTJ"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C51-nT-djV">
@@ -116,14 +116,14 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                     </view>
                     <connections>
-                        <outlet property="endGameView" destination="vx9-1m-e09" id="sAp-bQ-xPF"/>
+                        <outlet property="endGameView" destination="rPw-fL-D2M" id="rJk-r5-hki"/>
                         <outlet property="score" destination="C51-nT-djV" id="USw-wa-3Hq"/>
                     </connections>
                 </viewController>
@@ -312,7 +312,4 @@
     <resources>
         <image name="first" width="30" height="30"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="lKl-Zv-xFR"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -23,7 +23,7 @@
 
 @property (nonatomic, strong) AppDelegate *appDelegate;
 
-@property HostManager *hostManager;
+@property (nonatomic, strong) HostManager *hostManager;
 
 -(void)peerDidChangeStateWithNotification:(NSNotification *)notification;
 -(void)didReceiveDataWithNotification:(NSNotification *)notification;
@@ -98,6 +98,8 @@
                 NSLog(@"Not connected");
                 [[self labelConnected] setText:@" "];
                 [[self hostManager] setIsHost:NO];
+                NSLog (@"Host atualizado em change state: NO");
+                
                 peerExist = NO;
             }
             
@@ -111,8 +113,6 @@
 
 -(void)didReceiveDataWithNotification:(NSNotification *)notification {
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSLog(@"Ready");
-        
         if (![self ready]) {
             [self setReady:YES];
         }
@@ -143,10 +143,14 @@
     if ([self ready]) {
         [self performSegueWithIdentifier:@"connectSegue"
                                   sender:self];
+        
         [[self hostManager] setIsHost:NO];
+        NSLog (@"Host atualizado em start game: NO");
     }
     else {
         [[self hostManager] setIsHost:YES];
+        NSLog (@"Host atualizado em start game: YES");
+        
         [[self labelWaiting] setHidden:NO];
         [[self buttonStart] setHidden:YES];
         [self setReady:YES];
@@ -183,7 +187,9 @@
     [[self buttonStart] setEnabled:NO];
     
     [[[[self appDelegate] mcController] session] disconnect];
+    
     [[self hostManager] setIsHost:NO];
+    NSLog (@"Host atualizado em disconnect: NO");
     
     [[self labelConnected] setText:@" "];
     

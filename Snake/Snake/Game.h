@@ -19,11 +19,13 @@
 
 @interface Game : NSObject
 
-@property (readonly) int blockWidth;
-@property (readonly) int blockHeight;
+@property (readwrite) int blockWidth;
+@property (readwrite) int blockHeight;
 
 @property Snake *snake;
 @property Food *food;
+
+@property (readwrite) UIView *view;
 
 -(Game *) initWithView: (UIView *)view;
 

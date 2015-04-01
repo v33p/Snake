@@ -17,6 +17,7 @@
 
 //-(void) startGame;
 -(void) pauseGame;
+-(void) resumeGame;
 -(void) endGame;
 
 -(void) checkSnakePosition:(CGPoint)position;

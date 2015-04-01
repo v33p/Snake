@@ -29,12 +29,30 @@
 }
 
 -(void) pauseGame {
+    [[[self viewController] view] addSubview:[[self viewController] endGameView]];
+    [[[self viewController] endGameView] setHidden:NO];
+    [[[self viewController] score] setText:[[[NSNumber alloc] initWithInt:[self score]] stringValue]];
+    
     [[self snake] stopMoving];
 }
 
+-(void) resumeGame {
+    [[self snake] startMoving];
+    
+    [[[self viewController] endGameView] setHidden:YES];
+    
+}
+
 -(void) endGame {
-    [[[self viewController] endGameView] setHidden:NO];
-    [[[self viewController] score] setText:[[[NSNumber alloc] initWithInt:[self score]] stringValue]];
+    
+    //*
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"End Game" message:[[[NSNumber alloc] initWithInt:[self score]] stringValue] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    
+    [alertView show];
+    
+    //[[[self viewController] view] addSubview:[[self viewController] endGameView]];
+    //[[[self viewController] endGameView] setHidden:NO];
+    //[[[self viewController] score] setText:[[[NSNumber alloc] initWithInt:[self score]] stringValue]];
     [[self snake] stopMoving];
     NSLog(@"Fim de Jogo");
 }

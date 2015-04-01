@@ -19,6 +19,9 @@
 @property int axisX;
 @property int axisY;
 
+@property int temporaryAxisXSaver;
+@property int temporaryAxisYSaver;
+
 @property bool verticalMove;
 
 @property (readwrite) double speed;
@@ -48,8 +51,8 @@
         
         [self placeSnake:[self generateRandomPosition]];
         
-        [self setAxisX:0];
-        [self setAxisY:1];
+        [self setTemporaryAxisXSaver:0];
+        [self setTemporaryAxisYSaver:1];
         [self setVerticalMove:YES];
         
         [[self game] addImage:imageView];
@@ -104,10 +107,14 @@
                                                        selector:@selector(move)
                                                        userInfo:nil
                                                         repeats:YES]];
+    [self setAxisX:[self temporaryAxisXSaver]];
+    [self setAxisY:[self temporaryAxisYSaver]];
 }
 
 -(void) stopMoving {
     [[self snakeTimer] invalidate];
+    [self setTemporaryAxisXSaver:[self axisX]];
+    [self setTemporaryAxisYSaver:[self axisY]];
     [self setAxisX:0];
     [self setAxisY:0];
 }

@@ -14,6 +14,7 @@
 @interface SingleGameViewController ()
 
 @property SingleGame *gameController;
+@property BOOL isPaused;
 
 @end
 
@@ -40,6 +41,7 @@
     [self.view addGestureRecognizer:swipeUp];
     
     [self setGameController:[[SingleGame alloc] initWithView:[self view] andViewController:self]];
+    [self setIsPaused:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,6 +63,20 @@
 
 -(void) swipeUp {
     [[self gameController] moveSnakeUp];
+}
+
+
+// *
+-(void) doubleTab {
+    NSLog(@"pause");
+    
+    if ([self isPaused]) {
+        [[self gameController] pauseGame];
+    }
+    else {
+        [[self gameController] resumeGame];
+    }
+    [self setIsPaused:![self isPaused]];
 }
 
 /*

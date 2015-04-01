@@ -10,11 +10,6 @@
 
 @interface Game()
 
-@property UIView *view;
-
-@property (readwrite) int blockWidth;
-@property (readwrite) int blockHeight;
-
 @end
 
 @implementation Game
@@ -63,9 +58,7 @@
 #pragma mark - View Controller Comunication
 
 -(void) addImage: (UIImageView *)image {
-    
     [[self view] addSubview:image];
-    
 }
 
 #pragma mark - Snake Comunication
