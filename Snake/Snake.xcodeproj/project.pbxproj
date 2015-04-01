@@ -27,6 +27,7 @@
 		28438CF51AC995B00027BE8A /* SingleGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28438CF41AC995B00027BE8A /* SingleGameViewController.m */; };
 		28A7A52D1ACAF89E00558594 /* Snake(18).png in Resources */ = {isa = PBXBuildFile; fileRef = 28A7A52C1ACAF89E00558594 /* Snake(18).png */; };
 		28A7A52F1ACAF8AA00558594 /* Food-2(18).png in Resources */ = {isa = PBXBuildFile; fileRef = 28A7A52E1ACAF8AA00558594 /* Food-2(18).png */; };
+		28CD05EE1ACB65F90018ABA7 /* MultiGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28CD05ED1ACB65F90018ABA7 /* MultiGameViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,8 @@
 		28438CF41AC995B00027BE8A /* SingleGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleGameViewController.m; sourceTree = "<group>"; };
 		28A7A52C1ACAF89E00558594 /* Snake(18).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Snake(18).png"; sourceTree = "<group>"; };
 		28A7A52E1ACAF8AA00558594 /* Food-2(18).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Food-2(18).png"; sourceTree = "<group>"; };
+		28CD05EC1ACB65F90018ABA7 /* MultiGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiGameViewController.h; sourceTree = "<group>"; };
+		28CD05ED1ACB65F90018ABA7 /* MultiGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiGameViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +186,8 @@
 				281B55B21AC5920A002622ED /* ConfigurationViewController.m */,
 				281B558F1AC5821A002622ED /* InitialViewController.h */,
 				281B55901AC5821A002622ED /* InitialViewController.m */,
+				28CD05EC1ACB65F90018ABA7 /* MultiGameViewController.h */,
+				28CD05ED1ACB65F90018ABA7 /* MultiGameViewController.m */,
 				281B55921AC5821A002622ED /* HistoryViewController.h */,
 				281B55931AC5821A002622ED /* HistoryViewController.m */,
 				281B55B41AC59520002622ED /* ConnectViewController.h */,
@@ -314,6 +319,7 @@
 				28438CF51AC995B00027BE8A /* SingleGameViewController.m in Sources */,
 				281B558E1AC5821A002622ED /* AppDelegate.m in Sources */,
 				281B55911AC5821A002622ED /* InitialViewController.m in Sources */,
+				28CD05EE1ACB65F90018ABA7 /* MultiGameViewController.m in Sources */,
 				28438CDD1AC985670027BE8A /* Snake.m in Sources */,
 				28438CEF1AC98F610027BE8A /* SingleGame.m in Sources */,
 				281B558B1AC5821A002622ED /* main.m in Sources */,
@@ -441,9 +447,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Snake/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -452,9 +460,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Snake/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -11,6 +11,4 @@
 
 @interface ConnectViewController : UIViewController <MCBrowserViewControllerDelegate>
 
-@property BOOL ready;
-
 @end

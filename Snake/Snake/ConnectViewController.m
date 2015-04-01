@@ -18,9 +18,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *buttonStart;
 @property (weak, nonatomic) IBOutlet UILabel *labelWaiting;
 
+@property BOOL ready;
+
 @property (nonatomic, strong) AppDelegate *appDelegate;
 
 -(void)peerDidChangeStateWithNotification:(NSNotification *)notification;
+-(void)didReceiveDataWithNotification:(NSNotification *)notification;
 
 @end
 
@@ -30,6 +33,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self setReady:NO];
+    
     [self setAppDelegate:(AppDelegate *)[[UIApplication sharedApplication] delegate]];
     [[[self appDelegate] mcController] setupPeerAndSessionWithDisplayName:[[self appDelegate] name]];
     [[[self appDelegate] mcController] advertiseSelf:[[self switchVisible] isOn]];
@@ -37,6 +42,11 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(peerDidChangeStateWithNotification:)
                                                  name:@"MCDidChangeStateNotification"
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didReceiveDataWithNotification:)
+                                                 name:@"MCDidReceiveDataNotification"
                                                object:nil];
     
 }
@@ -50,17 +60,20 @@
 
 -(void)browserViewControllerDidFinish:(MCBrowserViewController *)browserViewController{
     [[[self appDelegate] mcController].browser dismissViewControllerAnimated:YES
-                                                               completion:nil];
+                                                                  completion:nil];
 }
 
 -(void)browserViewControllerWasCancelled:(MCBrowserViewController *)browserViewController{
     [[[self appDelegate] mcController].browser dismissViewControllerAnimated:YES
-                                                               completion:nil];
+                                                                  completion:nil];
 }
 
 #pragma mark - Notification
 
 -(void)peerDidChangeStateWithNotification:(NSNotification *)notification{
+    
+    NSLog(@"teste");
+    
     MCPeerID *peerID = [[notification userInfo] objectForKey:@"peerID"];
     NSString *peerDisplayName = peerID.displayName;
     MCSessionState state = [[[notification userInfo] objectForKey:@"state"] intValue];
@@ -83,10 +96,30 @@
     }
 }
 
+-(void)didReceiveDataWithNotification:(NSNotification *)notification {
+    
+    NSLog(@"Ready");
+    
+    if (![self ready]) {
+        [self setReady:YES];
+    }
+    else {
+        [self performSegueWithIdentifier:@"connectSegue"
+                                  sender:self];
+    }
+}
+
 #pragma mark - Button Action
 
 - (IBAction)startGame:(id)sender {
-    NSLog(@"Clicked");
+    if ([self ready]) {
+        [self performSegueWithIdentifier:@"connectSegue"
+                                  sender:self];
+    }
+    else {
+        [[self labelWaiting] setHidden:NO];
+        [[self buttonStart] setHidden:YES];
+    }
 }
 
 - (IBAction)searchForPlayers:(id)sender {
@@ -113,11 +146,20 @@
 
 - (IBAction)disconnect:(id)sender {
     [[self buttonSearch] setEnabled:YES];
+    [[self buttonStart] setEnabled:NO];
     
     [[[[self appDelegate] mcController] session] disconnect];
     
     [[self labelConnected] setText:@" "];
     
+    if (![[self labelWaiting] isHidden]) {
+        [[self labelWaiting] setHidden:YES];
+    }
+    if ([[self buttonStart] isHidden]) {
+        [[self buttonStart] setHidden:NO];
+    }
+    
+    [self setReady:NO];
 }
 
 # pragma mark - Switch Action
@@ -127,13 +169,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

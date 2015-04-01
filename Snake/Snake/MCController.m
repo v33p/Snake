@@ -7,6 +7,7 @@
 //
 
 #import "MCController.h"
+#import "MultiGame.h"
 
 @implementation MCController
 
@@ -38,7 +39,13 @@
 }
 
 -(void) session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID {
+    NSDictionary *dict = @{@"data": data,
+                           @"peerID": peerID
+                           };
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"MCDidReceiveDataNotification"
+                                                        object:nil
+                                                      userInfo:dict];
 }
 
 -(void) session:(MCSession *)session didStartReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID withProgress:(NSProgress *)progress {
@@ -57,7 +64,7 @@
 
 -(void) setupPeerAndSessionWithDisplayName:(NSString *)displayName{
     [self setPeerID:[[MCPeerID alloc] initWithDisplayName:displayName]];
-    [self setSession:[[MCSession alloc] initWithPeer:_peerID]];
+    [self setSession:[[MCSession alloc] initWithPeer:[self peerID]]];
     [[self session] setDelegate:self];
 }
 
@@ -66,11 +73,11 @@
                                                                   session:[self session]]];
 }
 
--(void)advertiseSelf:(BOOL)shouldAdvertise{
+-(void) advertiseSelf:(BOOL)shouldAdvertise{
     if (shouldAdvertise) {
         [self setAdvertiser:[[MCAdvertiserAssistant alloc] initWithServiceType:@"snake"
                                                                  discoveryInfo:nil
-                                                                       session:_session]];
+                                                                       session:[self session]]];
         [[self advertiser] start];
     }
     else{
@@ -78,4 +85,5 @@
         [self setAdvertiser:nil];
     }
 }
+
 @end
