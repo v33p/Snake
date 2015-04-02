@@ -66,7 +66,6 @@
 }
 
 - (IBAction)didPinch:(id)sender {
-    NSLog(@"pause");
     if (![self isPaused]) {
         [[self gameController] pauseGame];
         [self setIsPaused:YES];

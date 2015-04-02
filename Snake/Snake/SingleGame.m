@@ -29,11 +29,12 @@
 }
 
 -(void) pauseGame {
+    [[[self viewController] score] setText:[[[NSNumber alloc] initWithInt:[self score]] stringValue]];
+    [[[self viewController] secondButton] setTitle:@"Resume" forState:UIControlStateNormal];
+    [[[self viewController] label] setText:@"Pause"];
+    
     [[[self viewController] view] addSubview:[[self viewController] endGameView]];
     [[[self viewController] endGameView] setHidden:NO];
-    [[[self viewController] score] setText:[[[NSNumber alloc] initWithInt:[self score]] stringValue]];
-    // trocar o botao para resume
-    // trocar o label de gameover
     
     [[self snake] stopMoving];
 }
@@ -45,19 +46,13 @@
     
 }
 
--(void) endGame {
-    
-    //*
-//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"End Game" message:[[[NSNumber alloc] initWithInt:[self score]] stringValue] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//    
-//    [alertView show];
+-(void) endGame {    
+    [[[self viewController] score] setText:[[[NSNumber alloc] initWithInt:[self score]] stringValue]];
+    [[[self viewController] secondButton] setTitle:@"Restart" forState:UIControlStateNormal];
+    [[[self viewController] label] setText:@"Game Over"];
     
     [[[self viewController] view] addSubview:[[self viewController] endGameView]];
     [[[self viewController] endGameView] setHidden:NO];
-    [[[self viewController] score] setText:[[[NSNumber alloc] initWithInt:[self score]] stringValue]];
-    
-    // trocar o botao para resume
-    // trocar o label de gameover
     
     [[self snake] stopMoving];
     NSLog(@"Fim de Jogo");

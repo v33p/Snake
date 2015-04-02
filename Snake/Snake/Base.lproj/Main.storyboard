@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9pv-A4-QxB">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
@@ -21,6 +21,23 @@
         </mutableArray>
     </customFonts>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="IL4-oq-hIZ">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="lTb-1M-kmp" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wsu-to-3eS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="show" id="Dw5-89-zoW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nx8-nH-QbO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-41" y="-320"/>
+        </scene>
         <!--Initial-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
@@ -34,28 +51,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAH-6w-39Z">
-                                <rect key="frame" x="30" y="239" width="109" height="30"/>
+                                <rect key="frame" x="49" y="239" width="109" height="30"/>
                                 <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="15"/>
                                 <state key="normal" title="Singleplayer">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Gwf-Ad-qAX" kind="presentation" animates="NO" id="Od3-8Q-qRJ"/>
+                                    <segue destination="Gwf-Ad-qAX" kind="show" id="Od3-8Q-qRJ"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oTg-uv-OfI">
-                                <rect key="frame" x="80" y="28" width="172" height="172"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgu-Mt-u2T">
-                                <rect key="frame" x="195" y="239" width="95" height="30"/>
+                                <rect key="frame" x="214" y="239" width="95" height="30"/>
                                 <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="15"/>
                                 <state key="normal" title="Multiplayer">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="tIX-IM-LMi" kind="presentation" animates="NO" id="kDh-hM-6ej"/>
+                                    <segue destination="tIX-IM-LMi" kind="show" id="kDh-hM-6ej"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oTg-uv-OfI">
+                                <rect key="frame" x="100" y="28" width="172" height="172"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -80,41 +97,35 @@
                             <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rPw-fL-D2M">
                                 <rect key="frame" x="0.0" y="0.0" width="678" height="864"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bMn-16-tid">
-                                        <rect key="frame" x="26" y="133" width="300" height="300"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R51-DL-LwX">
-                                                <rect key="frame" x="176" y="239" width="85" height="30"/>
-                                                <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="15"/>
-                                                <state key="normal" title="Play Again">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="secondButtonClicked:" destination="Gwf-Ad-qAX" eventType="touchUpInside" id="JkC-j8-Idw"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2CL-Ng-mgG">
-                                                <rect key="frame" x="39" y="239" width="30" height="30"/>
-                                                <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="15"/>
-                                                <state key="normal" title="Exit">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C51-nT-djV">
-                                                <rect key="frame" x="31" y="75" width="239" height="150"/>
-                                                <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="55"/>
-                                                <color key="textColor" red="0.71291035353535359" green="0.71291035353535359" blue="0.71291035353535359" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Over" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0b-wW-DUe">
-                                                <rect key="frame" x="91" y="46" width="118" height="21"/>
-                                                <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
-                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R51-DL-LwX">
+                                        <rect key="frame" x="218" y="560" width="85" height="30"/>
+                                        <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="15"/>
+                                        <state key="normal" title="Play Again">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="secondButtonClicked:" destination="Gwf-Ad-qAX" eventType="touchUpInside" id="JkC-j8-Idw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2CL-Ng-mgG">
+                                        <rect key="frame" x="104" y="560" width="30" height="30"/>
+                                        <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="15"/>
+                                        <state key="normal" title="Exit">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Over" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0b-wW-DUe">
+                                        <rect key="frame" x="130" y="50" width="118" height="21"/>
+                                        <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C51-nT-djV">
+                                        <rect key="frame" x="70" y="250" width="239" height="150"/>
+                                        <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="55"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                             </view>
@@ -125,9 +136,14 @@
                             <outletCollection property="gestureRecognizers" destination="j25-pU-wqx" appends="YES" id="oVO-xt-I5Q"/>
                         </connections>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="endGameView" destination="rPw-fL-D2M" id="rJk-r5-hki"/>
+                        <outlet property="label" destination="n0b-wW-DUe" id="rea-rr-cdR"/>
                         <outlet property="score" destination="C51-nT-djV" id="USw-wa-3Hq"/>
+                        <outlet property="secondButton" destination="R51-DL-LwX" id="ASS-1n-81f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pj1-cT-6dM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -221,7 +237,7 @@
                         <outlet property="labelConnected" destination="QUo-DB-YsT" id="Pg2-N9-YZf"/>
                         <outlet property="labelWaiting" destination="oiB-y3-aFN" id="4SY-X8-Wxq"/>
                         <outlet property="switchVisible" destination="Dwf-Ad-c9f" id="GJB-Fg-Osh"/>
-                        <segue destination="z5M-SU-dLa" kind="presentation" identifier="connectSegue" animates="NO" id="qRh-7q-lfC"/>
+                        <segue destination="z5M-SU-dLa" kind="show" identifier="connectSegue" id="qRh-7q-lfC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oEE-gJ-qzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -241,6 +257,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fo4-Uh-NRU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -263,7 +282,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="750" y="354"/>
         </scene>
         <!--Configuration-->
         <scene sceneID="EoN-qU-x8M">
@@ -295,26 +314,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UC5-ma-5ys" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="1033"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="yl2-sM-qoP">
-            <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
-                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="zxI-IA-os7" kind="relationship" relationship="viewControllers" id="K3T-f3-Z7K"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="32" y="500"/>
         </scene>
     </scenes>
     <resources>

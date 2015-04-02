@@ -15,7 +15,6 @@
 
 -(SingleGame *) initWithView: (UIView *)view andViewController: (SingleGameViewController *) viewController;
 
-//-(void) startGame;
 -(void) pauseGame;
 -(void) resumeGame;
 -(void) endGame;

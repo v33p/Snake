@@ -12,5 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *endGameView;
 @property (weak, nonatomic) IBOutlet UILabel *score;
+@property (weak, nonatomic) IBOutlet UIButton *secondButton;
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end
