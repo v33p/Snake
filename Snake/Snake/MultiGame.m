@@ -10,11 +10,14 @@
 
 @interface MultiGame()
 
-@property UIViewController *viewController;
+@property MultiGameViewController *viewController;
 @property AppDelegate *appDelegate;
 @property (nonatomic, strong) HostManager *hostManager;
 
 @property BOOL hasStarted;
+
+@property int scoreHost;
+@property int scoreClient;
 
 @end
 
@@ -22,7 +25,7 @@
 
 #pragma mark - Game Control
 
--(MultiGame *) initWithView: (UIView *) view andController: (UIViewController *) viewController {
+-(MultiGame *) initWithView: (UIView *) view andController: (MultiGameViewController *) viewController {
     self = [super init];
     
     if (self) {
@@ -58,7 +61,6 @@
 }
 
 -(void) startGame {
-    
     if (![self hasStarted]) {
         [self setHasStarted:YES];
         NSLog(@"start game");
@@ -72,14 +74,45 @@
         if ([[self hostManager] isHost]) {
             NSString *data = [@"@" stringByAppendingString:[self convertPositionIntoString:[[self food] position]]];
             [self sendData:data];
+            
+            [[[self viewController] nameHost] setText:[[self appDelegate] name]];
+            
+            NSArray *allPeers = [[[[self appDelegate] mcController] session ] connectedPeers];
+            MCPeerID *peerID = allPeers[0];
+            NSString *peerDisplayName = peerID.displayName;
+            [[[self viewController] nameClient] setText:peerDisplayName];
+        }
+        else {
+            [[[self viewController] nameClient] setText:[[self appDelegate] name]];
+            
+            NSArray *allPeers = [[[[self appDelegate] mcController] session ] connectedPeers];
+            MCPeerID *peerID = allPeers[0];
+            NSString *peerDisplayName = peerID.displayName;
+            [[[self viewController] nameHost] setText:peerDisplayName];
         }
         
         [[self snake] startMoving];
     }
 }
 
+-(void) resumeGame {
+    [[self snake] startMoving];
+    
+    [[[self viewController] endGameView] setHidden:YES];
+}
+
 -(void) pauseGame {
     // multipeer comunication:
+    
+    [[[self viewController] scoreHost] setText:[[[NSNumber alloc] initWithInt:[self scoreHost]] stringValue]];
+    [[[self viewController] scoreClient] setText:[[[NSNumber alloc] initWithInt:[self scoreClient]] stringValue]];
+    
+    [[[self viewController] secondButton] setTitle:@"Resume" forState:UIControlStateNormal];
+    [[[self viewController] label] setText:@"Pause"];
+    
+    [[[self viewController] view] addSubview:[[self viewController] endGameView]];
+    [[[self viewController] endGameView] setHidden:NO];
+    
     [[self snake] stopMoving];
     
     // menu aparece

@@ -209,6 +209,11 @@
     [self setReady:NO];
 }
 
+- (IBAction)back:(id)sender {
+    //[[self navigationController] popToRootViewControllerAnimated:NO];
+    [[self navigationController] popViewControllerAnimated:YES];
+}
+
 # pragma mark - Switch Action
 
 - (IBAction)toggleVisibility:(id)sender {

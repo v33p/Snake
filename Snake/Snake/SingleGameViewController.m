@@ -82,6 +82,10 @@
     }
 }
 
+- (IBAction)didExit:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:NO];
+}
+
 /*
  #pragma mark - Navigation
  

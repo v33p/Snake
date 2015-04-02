@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9pv-A4-QxB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lTb-1M-kmp">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Hardpixel.OTF">
+            <string>Hardpixel</string>
+            <string>Hardpixel</string>
+            <string>Hardpixel</string>
+            <string>Hardpixel</string>
+            <string>Hardpixel</string>
+            <string>Hardpixel</string>
+            <string>Hardpixel</string>
+            <string>Hardpixel</string>
+            <string>Hardpixel</string>
             <string>Hardpixel</string>
             <string>Hardpixel</string>
             <string>Hardpixel</string>
@@ -31,7 +40,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="show" id="Dw5-89-zoW"/>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="zlg-XP-7gD"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nx8-nH-QbO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -47,13 +56,20 @@
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="purpleButton.png" translatesAutoresizingMaskIntoConstraints="NO" id="sml-ZE-DJH">
+                                <rect key="frame" x="67" y="340" width="240" height="128"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="purpleButton.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ckg-4p-26A">
+                                <rect key="frame" x="67" y="419" width="240" height="128"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAH-6w-39Z">
-                                <rect key="frame" x="49" y="239" width="109" height="30"/>
-                                <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="15"/>
+                                <rect key="frame" x="80" y="374" width="215" height="60"/>
+                                <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="25"/>
                                 <state key="normal" title="Singleplayer">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -61,9 +77,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgu-Mt-u2T">
-                                <rect key="frame" x="214" y="239" width="95" height="30"/>
-                                <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="15"/>
+                                <rect key="frame" x="80" y="453" width="215" height="59"/>
+                                <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="25"/>
                                 <state key="normal" title="Multiplayer">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -71,12 +88,20 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oTg-uv-OfI">
-                                <rect key="frame" x="100" y="28" width="172" height="172"/>
+                                <rect key="frame" x="101" y="92" width="172" height="172"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="© LOOP 2015" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHH-zf-Vq8">
+                                <rect key="frame" x="128" y="585" width="119" height="21"/>
+                                <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.66666666669999997" green="0.82352941180000006" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Play" image="first" id="acW-dT-cKf"/>
+                    <navigationItem key="navigationItem" id="PZM-yK-366"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -91,7 +116,7 @@
                         <viewControllerLayoutGuide type="bottom" id="eTa-r7-qcU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9dg-1f-HQ0">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rPw-fL-D2M">
@@ -113,6 +138,9 @@
                                         <state key="normal" title="Exit">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didExit:" destination="Gwf-Ad-qAX" eventType="touchUpInside" id="sQQ-VO-wtw"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Over" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0b-wW-DUe">
                                         <rect key="frame" x="130" y="50" width="118" height="21"/>
@@ -130,7 +158,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.66666666669999997" green="0.82352941180000006" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="j25-pU-wqx" appends="YES" id="oVO-xt-I5Q"/>
@@ -164,47 +192,43 @@
                         <viewControllerLayoutGuide type="bottom" id="UoC-xz-avX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nmW-XZ-yO9">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Visible to others?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tqr-Ky-PiU">
-                                <rect key="frame" x="19" y="289" width="161" height="21"/>
+                                <rect key="frame" x="73" y="287" width="161" height="21"/>
                                 <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dwf-Ad-c9f">
-                                <rect key="frame" x="193" y="284" width="51" height="31"/>
+                                <rect key="frame" x="247" y="282" width="51" height="31"/>
                                 <connections>
                                     <action selector="toggleVisibility:" destination="tIX-IM-LMi" eventType="valueChanged" id="Jql-WM-cQ0"/>
                                 </connections>
                             </switch>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="purpleButton.png" translatesAutoresizingMaskIntoConstraints="NO" id="htr-Me-lw6">
+                                <rect key="frame" x="70" y="301" width="240" height="128"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nev-rM-Oc7">
-                                <rect key="frame" x="55" y="323" width="157" height="30"/>
-                                <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="15"/>
+                                <rect key="frame" x="81" y="334" width="215" height="55"/>
+                                <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="20"/>
                                 <state key="normal" title="Search for players">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="searchForPlayers:" destination="tIX-IM-LMi" eventType="touchUpInside" id="Aw4-6i-M7U"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Connected with:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUc-lw-kdj">
-                                <rect key="frame" x="62" y="359" width="142" height="21"/>
-                                <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUo-DB-YsT">
-                                <rect key="frame" x="57" y="388" width="152" height="21"/>
-                                <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="17"/>
-                                <color key="textColor" red="0.050980392156862744" green="0.37647058823529411" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRA-K7-AY8">
-                                <rect key="frame" x="16" y="42" width="235" height="196"/>
-                                <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="40"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="purpleButtonBigDeactivated.png" translatesAutoresizingMaskIntoConstraints="NO" id="e9v-id-bqF">
+                                <rect key="frame" x="70" y="18" width="240" height="256"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gRA-K7-AY8">
+                                <rect key="frame" x="85" y="85" width="216" height="125"/>
+                                <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="45"/>
                                 <state key="normal" title="Start Game">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -212,23 +236,53 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aguardando outro jogador.." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiB-y3-aFN">
-                                <rect key="frame" x="9" y="165" width="248" height="21"/>
+                                <rect key="frame" x="69" y="232" width="248" height="21"/>
                                 <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="deactivatedButton.png" translatesAutoresizingMaskIntoConstraints="NO" id="1Bj-Rv-jBM">
+                                <rect key="frame" x="73" y="498" width="240" height="128"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltO-MV-c3S">
-                                <rect key="frame" x="84" y="408" width="98" height="30"/>
-                                <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="15"/>
+                                <rect key="frame" x="125" y="542" width="131" height="30"/>
+                                <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="20"/>
                                 <state key="normal" title="Disconnect">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="disconnect:" destination="tIX-IM-LMi" eventType="touchUpInside" id="uEw-KZ-DkB"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="squarePurpleButton.png" translatesAutoresizingMaskIntoConstraints="NO" id="c5p-i5-5VN">
+                                <rect key="frame" x="-75" y="-19" width="240" height="128"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oul-sm-l1R">
+                                <rect key="frame" x="-12" y="10" width="59" height="60"/>
+                                <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="40"/>
+                                <state key="normal" title="&lt;">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="back:" destination="tIX-IM-LMi" eventType="touchUpInside" id="HtB-jF-ZFb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Connected with:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUc-lw-kdj">
+                                <rect key="frame" x="117" y="429" width="142" height="21"/>
+                                <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUo-DB-YsT">
+                                <rect key="frame" x="112" y="463" width="152" height="21"/>
+                                <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="17"/>
+                                <color key="textColor" red="0.35294117650000001" green="0.27450980390000002" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.66666666669999997" green="0.82352941180000006" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="buttonDisconnect" destination="ltO-MV-c3S" id="ODo-vJ-7sN"/>
@@ -242,7 +296,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oEE-gJ-qzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1460" y="-660"/>
+            <point key="canvasLocation" x="1450.5" y="-660.5"/>
         </scene>
         <!--Multiplayer Game-->
         <scene sceneID="GtP-Yb-DZ9">
@@ -253,15 +307,92 @@
                         <viewControllerLayoutGuide type="bottom" id="azD-zl-t7m"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ljn-4z-DuP">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5gD-gS-LBr">
+                                <rect key="frame" x="-39" y="-132" width="678" height="864"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBF-iM-gsF">
+                                        <rect key="frame" x="218" y="560" width="85" height="30"/>
+                                        <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="15"/>
+                                        <state key="normal" title="Play Again">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="secondButtonClicked:" destination="Gwf-Ad-qAX" eventType="touchUpInside" id="ODP-hS-eQ9"/>
+                                            <action selector="secondButtonClicked:" destination="z5M-SU-dLa" eventType="touchUpInside" id="Vr6-Be-lea"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m0w-Dv-FeO">
+                                        <rect key="frame" x="104" y="560" width="30" height="30"/>
+                                        <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="15"/>
+                                        <state key="normal" title="Exit">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didExit:" destination="z5M-SU-dLa" eventType="touchUpInside" id="j1X-sL-tDj"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Over" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Npv-Kp-exC">
+                                        <rect key="frame" x="130" y="50" width="118" height="21"/>
+                                        <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OmF-1d-WzB" userLabel="ScoreHost">
+                                        <rect key="frame" x="9" y="268" width="239" height="150"/>
+                                        <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="55"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSP-zX-RPh" userLabel="ScoreHost">
+                                        <rect key="frame" x="153" y="268" width="239" height="150"/>
+                                        <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="55"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VIPhone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brj-CQ-54a">
+                                        <rect key="frame" x="58" y="281" width="141" height="21"/>
+                                        <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="iPhone Simulator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67v-f0-PGe">
+                                        <rect key="frame" x="202" y="280" width="146" height="21"/>
+                                        <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.66666666669999997" green="0.82352941180000006" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="2v0-Cn-GVC" appends="YES" id="aHJ-bb-7mA"/>
+                        </connections>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="endGameView" destination="5gD-gS-LBr" id="eOd-l0-Bm2"/>
+                        <outlet property="label" destination="Npv-Kp-exC" id="4Lb-ht-9nX"/>
+                        <outlet property="nameClient" destination="67v-f0-PGe" id="Xdr-nq-CsU"/>
+                        <outlet property="nameHost" destination="brj-CQ-54a" id="Ouj-UU-8A9"/>
+                        <outlet property="scoreClient" destination="LSP-zX-RPh" id="vDz-aw-NKI"/>
+                        <outlet property="scoreHost" destination="OmF-1d-WzB" id="tf5-4i-8XH"/>
+                        <outlet property="secondButton" destination="fBF-iM-gsF" id="NnE-mT-syy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fo4-Uh-NRU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="2v0-Cn-GVC">
+                    <connections>
+                        <action selector="didPinch:" destination="z5M-SU-dLa" id="cD1-7g-MiO"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2124" y="-660"/>
         </scene>
@@ -317,6 +448,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="deactivatedButton.png" width="345" height="100"/>
         <image name="first" width="30" height="30"/>
+        <image name="purpleButton.png" width="345" height="100"/>
+        <image name="purpleButtonBigDeactivated.png" width="345" height="200"/>
+        <image name="squarePurpleButton.png" width="345" height="100"/>
     </resources>
 </document>

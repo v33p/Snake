@@ -11,6 +11,7 @@
 @interface MultiGameViewController ()
 
 @property MultiGame *gameController;
+@property BOOL isPaused;
 
 @end
 
@@ -37,7 +38,7 @@
     [self.view addGestureRecognizer:swipeUp];
     
     [self setGameController:[[MultiGame alloc] initWithView:[self view] andController:self]];
-
+    [self setIsPaused:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,6 +61,30 @@
 -(void) swipeUp {
     [[self gameController] moveSnakeUp];
 }
+
+- (IBAction)didPinch:(id)sender {
+    if (![self isPaused]) {
+        [[self gameController] pauseGame];
+        [self setIsPaused:YES];
+    }
+}
+
+- (IBAction)secondButtonClicked:(id)sender {
+    if ([self isPaused]) {
+        [self setIsPaused:NO];
+        [[self gameController] resumeGame];
+    }
+    else {
+        // restart game
+    }
+}
+
+- (IBAction)didExit:(id)sender {
+    // precisa disconnectar tambem?
+    
+    [self.navigationController popToRootViewControllerAnimated:NO];
+}
+
 
 /*
 #pragma mark - Navigation

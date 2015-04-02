@@ -7,8 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MultipeerConnectivity/MultipeerConnectivity.h>
 #import "MultiGame.h"
 
 @interface MultiGameViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UILabel *label;
+@property (weak, nonatomic) IBOutlet UIButton *secondButton;
+@property (weak, nonatomic) IBOutlet UILabel *nameHost;
+@property (weak, nonatomic) IBOutlet UILabel *scoreHost;
+
+@property (weak, nonatomic) IBOutlet UILabel *nameClient;
+@property (weak, nonatomic) IBOutlet UILabel *scoreClient;
+
+@property (weak, nonatomic) IBOutlet UIView *endGameView;
 
 @end

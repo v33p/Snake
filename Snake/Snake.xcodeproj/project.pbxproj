@@ -30,6 +30,11 @@
 		28A7A52F1ACAF8AA00558594 /* Food-2(18).png in Resources */ = {isa = PBXBuildFile; fileRef = 28A7A52E1ACAF8AA00558594 /* Food-2(18).png */; };
 		28CD05EE1ACB65F90018ABA7 /* MultiGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28CD05ED1ACB65F90018ABA7 /* MultiGameViewController.m */; };
 		28DC042A1ACC3946000524A8 /* HostManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DC04291ACC3946000524A8 /* HostManager.m */; };
+		28DE67F11ACD815B0073DA26 /* deactivatedButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 28DE67EF1ACD815B0073DA26 /* deactivatedButton.png */; };
+		28DE67F21ACD815B0073DA26 /* purpleButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 28DE67F01ACD815B0073DA26 /* purpleButton.png */; };
+		28DE67F41ACD84AE0073DA26 /* squarePurpleButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 28DE67F31ACD84AE0073DA26 /* squarePurpleButton.png */; };
+		28DE67F71ACD86690073DA26 /* purpleButtonBig.png in Resources */ = {isa = PBXBuildFile; fileRef = 28DE67F51ACD86690073DA26 /* purpleButtonBig.png */; };
+		28DE67F81ACD86690073DA26 /* purpleButtonBigDeactivated.png in Resources */ = {isa = PBXBuildFile; fileRef = 28DE67F61ACD86690073DA26 /* purpleButtonBigDeactivated.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +89,11 @@
 		28CD05ED1ACB65F90018ABA7 /* MultiGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiGameViewController.m; sourceTree = "<group>"; };
 		28DC04281ACC3946000524A8 /* HostManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostManager.h; sourceTree = "<group>"; };
 		28DC04291ACC3946000524A8 /* HostManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostManager.m; sourceTree = "<group>"; };
+		28DE67EF1ACD815B0073DA26 /* deactivatedButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deactivatedButton.png; sourceTree = "<group>"; };
+		28DE67F01ACD815B0073DA26 /* purpleButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = purpleButton.png; sourceTree = "<group>"; };
+		28DE67F31ACD84AE0073DA26 /* squarePurpleButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = squarePurpleButton.png; sourceTree = "<group>"; };
+		28DE67F51ACD86690073DA26 /* purpleButtonBig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = purpleButtonBig.png; sourceTree = "<group>"; };
+		28DE67F61ACD86690073DA26 /* purpleButtonBigDeactivated.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = purpleButtonBigDeactivated.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +151,11 @@
 		281B55881AC5821A002622ED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				28DE67F51ACD86690073DA26 /* purpleButtonBig.png */,
+				28DE67F61ACD86690073DA26 /* purpleButtonBigDeactivated.png */,
+				28DE67F31ACD84AE0073DA26 /* squarePurpleButton.png */,
+				28DE67EF1ACD815B0073DA26 /* deactivatedButton.png */,
+				28DE67F01ACD815B0073DA26 /* purpleButton.png */,
 				2881E9E21ACBB22800011437 /* Hardpixel.OTF */,
 				28A7A52E1ACAF8AA00558594 /* Food-2(18).png */,
 				28A7A52C1ACAF89E00558594 /* Snake(18).png */,
@@ -298,8 +313,13 @@
 			files = (
 				28A7A52F1ACAF8AA00558594 /* Food-2(18).png in Resources */,
 				281B55971AC5821A002622ED /* Main.storyboard in Resources */,
+				28DE67F11ACD815B0073DA26 /* deactivatedButton.png in Resources */,
 				2881E9E31ACBB22800011437 /* Hardpixel.OTF in Resources */,
+				28DE67F21ACD815B0073DA26 /* purpleButton.png in Resources */,
+				28DE67F81ACD86690073DA26 /* purpleButtonBigDeactivated.png in Resources */,
+				28DE67F71ACD86690073DA26 /* purpleButtonBig.png in Resources */,
 				281B559C1AC5821A002622ED /* LaunchScreen.xib in Resources */,
+				28DE67F41ACD84AE0073DA26 /* squarePurpleButton.png in Resources */,
 				28438CDF1AC98C520027BE8A /* Snake.png in Resources */,
 				281B55991AC5821A002622ED /* Images.xcassets in Resources */,
 				28A7A52D1ACAF89E00558594 /* Snake(18).png in Resources */,
