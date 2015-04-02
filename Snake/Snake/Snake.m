@@ -25,6 +25,7 @@
 @property bool verticalMove;
 
 @property (readwrite) double speed;
+@property (readwrite) double factor;
 
 -(void) move;
 
@@ -67,6 +68,7 @@
         }
         
         [self setSpeed:0.2];
+        [self setFactor:0.02];
         
     }
     
@@ -198,6 +200,17 @@
 -(void) changingSpeedByAddingByFactor: (double) factor {
     [[self snakeTimer] invalidate];
     [self setSpeed:[self speed] + factor];
+    [self setSnakeTimer:[NSTimer scheduledTimerWithTimeInterval:[self speed]
+                                                         target:self
+                                                       selector:@selector(move)
+                                                       userInfo:nil
+                                                        repeats:YES]];
+}
+
+-(void) changingSpeed {
+    [[self snakeTimer] invalidate];
+    [self setFactor:[self factor] * 0.8];
+    [self setSpeed:[self speed] - [self factor]];
     [self setSnakeTimer:[NSTimer scheduledTimerWithTimeInterval:[self speed]
                                                          target:self
                                                        selector:@selector(move)

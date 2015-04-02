@@ -99,38 +99,59 @@
     [[self snake] startMoving];
     
     [[[self viewController] endGameView] setHidden:YES];
+    [[self viewController] setIsPaused:NO];
 }
 
 -(void) pauseGame {
-    // multipeer comunication:
+    // multipeer comunication?
     
     [[[self viewController] scoreHost] setText:[[[NSNumber alloc] initWithInt:[self scoreHost]] stringValue]];
     [[[self viewController] scoreClient] setText:[[[NSNumber alloc] initWithInt:[self scoreClient]] stringValue]];
     
     [[[self viewController] secondButton] setTitle:@"Resume" forState:UIControlStateNormal];
-    [[[self viewController] label] setText:@"Pause"];
+    [[[self viewController] label] setText:@"PAUSE"];
     
     [[[self viewController] view] addSubview:[[self viewController] endGameView]];
     [[[self viewController] endGameView] setHidden:NO];
     
     [[self snake] stopMoving];
-    
-    // menu aparece
 }
 
 -(void) endGame {
     // multipeer comunication:
     // tela de fim de jogo
+    [[[self viewController] scoreHost] setText:[[[NSNumber alloc] initWithInt:[self scoreHost]] stringValue]];
+    [[[self viewController] scoreClient] setText:[[[NSNumber alloc] initWithInt:[self scoreClient]] stringValue]];
+    
+    [[[self viewController] secondButton] setTitle:@"Restart" forState:UIControlStateNormal];
+    [[[self viewController] label] setText:@"GAME OVER"];
+    
+    [[[self viewController] view] addSubview:[[self viewController] endGameView]];
+    [[[self viewController] endGameView] setHidden:NO];
+    
+    [[self snake] stopMoving];
 }
 
 #pragma mark - Snake Loop
 
 -(void) checkSnakePosition:(CGPoint)position {
     
-    [self checkSnakeOutOfBounds:position];
+    position = [self checkSnakeOutOfBounds:position];
     
     if ([[self snake] compareBodyWithHeadPosition:position]) {
         [self endGame];
+        
+        if ([[self hostManager] isHost]) {
+            [[[self viewController] scoreClient] setTextColor:[UIColor greenColor]];
+            [[[self viewController] scoreHost] setTextColor:[UIColor redColor]];
+        }
+        else {
+            [[[self viewController] scoreHost] setTextColor:[UIColor greenColor]];
+            [[[self viewController] scoreClient] setTextColor:[UIColor redColor]];
+        }
+        
+        NSString *data = @"$";
+        [self sendData:data];
     }
     
     else if (position.x == [[self food] position].x &&
@@ -146,6 +167,13 @@
         // outro sofre efeito
         data = @"#";
         [self sendData:data];
+        
+        if ([[self hostManager] isHost]) {
+            [self setScoreHost:[self scoreHost]+1];
+        }
+        else {
+            [self setScoreClient:[self scoreClient]+1];
+        }
     }
     
 }
@@ -174,16 +202,19 @@
     MCSessionState state = [[[notification userInfo] objectForKey:@"state"] intValue];
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        
         if (state != MCSessionStateConnecting) {
             if (state == MCSessionStateConnected) {
                 NSLog(@"Connected");
+                [[[self viewController] connecting] setHidden:YES];
+            }
+            else if (state == MCSessionStateConnecting) {
+                [[[self viewController] connecting] setHidden:NO];
             }
             else if (state == MCSessionStateNotConnected){
+                [[[self viewController] connecting] setHidden:NO];
                 NSLog(@"Not connected");
             }
         }
-        
     });
 }
 
@@ -201,8 +232,33 @@
         }
         // snake enlarge
         else if ([receivedText hasPrefix:@"#"]) {
+            if ([[self viewController] isPaused])
+                [self resumeGame];
+            
+            
             [[self snake] enlarge];
-            [[self snake] changingSpeedByAddingByFactor:-0.01];
+            //[[self snake] changingSpeedByAddingByFactor:-0.01];
+            [[self snake] changingSpeed];
+            
+            if ([[self hostManager] isHost]) {
+                [self setScoreClient:[self scoreClient]+1];
+            }
+            else {
+                [self setScoreHost:[self scoreHost]+1];
+            }
+        }
+        // end game
+        else if ([receivedText hasPrefix:@"$"]) {
+            if ([[self hostManager] isHost]) {
+                [[[self viewController] scoreHost] setTextColor:[UIColor greenColor]];
+                [[[self viewController] scoreClient] setTextColor:[UIColor redColor]];
+            }
+            else {
+                [[[self viewController] scoreClient] setTextColor:[UIColor greenColor]];
+                [[[self viewController] scoreHost] setTextColor:[UIColor redColor]];
+            }
+            
+            [self endGame];
         }
         
     });

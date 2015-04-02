@@ -22,4 +22,8 @@
 
 @property (weak, nonatomic) IBOutlet UIView *endGameView;
 
+@property BOOL isPaused;
+
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *connecting;
+
 @end

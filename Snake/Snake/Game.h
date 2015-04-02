@@ -41,7 +41,7 @@
 
 -(void) checkSnakePosition: (CGPoint) position;
 
--(void)checkSnakeOutOfBounds:(CGPoint)position;
--(void) snakeOutOfBound:(int)bound andPosition:(CGPoint)snake;
+-(CGPoint)checkSnakeOutOfBounds:(CGPoint)position;
+-(CGPoint) snakeOutOfBound:(int)bound andPosition:(CGPoint)snake;
 
 @end

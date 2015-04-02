@@ -11,13 +11,21 @@
 #import "HostManager.h"
 
 @interface ConnectViewController ()
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *connecting;
 
 @property (weak, nonatomic) IBOutlet UISwitch *switchVisible;
 @property (weak, nonatomic) IBOutlet UIButton *buttonDisconnect;
+@property (weak, nonatomic) IBOutlet UIImageView *buttonDisconnectImageView;
+
 @property (weak, nonatomic) IBOutlet UILabel *labelConnected;
 @property (weak, nonatomic) IBOutlet UIButton *buttonSearch;
+@property (weak, nonatomic) IBOutlet UIImageView *buttonSearchImageView;
+
 @property (weak, nonatomic) IBOutlet UIButton *buttonStart;
+@property (weak, nonatomic) IBOutlet UIImageView *buttonStartImageView;
+
 @property (weak, nonatomic) IBOutlet UILabel *labelWaiting;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *waiting;
 
 @property BOOL ready;
 
@@ -89,18 +97,34 @@
         
         BOOL peerExist;
         if (state != MCSessionStateConnecting) {
+            [[self connecting] setHidden:NO];
             if (state == MCSessionStateConnected) {
+                
+                [[self connecting] setHidden:YES];
+                
                 [[self labelConnected] setText:peerDisplayName];
                 peerExist = YES;
                 NSLog(@"Connected");
+                
+                [self changeImage:@"purpleButtonBig.png" ofImageView:[self buttonStartImageView]];
+                [self changeImage:@"deactivatedButton.png" ofImageView:[self buttonSearchImageView]];
+                [self changeImage:@"purpleButton.png" ofImageView:[self buttonDisconnectImageView]];
             }
             else if (state == MCSessionStateNotConnected){
+                
+                [[self connecting] setHidden:YES];
+                
                 NSLog(@"Not connected");
                 [[self labelConnected] setText:@" "];
                 [[self hostManager] setIsHost:NO];
                 NSLog (@"Host atualizado em change state: NO");
                 
                 peerExist = NO;
+                
+                [self changeImage:@"purpleButtonBigDeactivated.png" ofImageView:[self buttonStartImageView]];
+                [self changeImage:@"purpleButton.png" ofImageView:[self buttonSearchImageView]];
+                [self changeImage:@"deactivatedButton.png" ofImageView:[self buttonDisconnectImageView]];
+                
             }
             
             [[self buttonDisconnect] setEnabled:peerExist];
@@ -158,7 +182,11 @@
         NSLog (@"Host atualizado em start game: YES");
         
         [[self labelWaiting] setHidden:NO];
+        [[self waiting] setHidden:NO];
+        
         [[self buttonStart] setHidden:YES];
+        [[self buttonStartImageView] setHidden:YES];
+        
         [self setReady:YES];
     }
     
@@ -190,7 +218,10 @@
 
 - (IBAction)disconnect:(id)sender {
     [[self buttonSearch] setEnabled:YES];
+    [self changeImage:@"purpleButton.png" ofImageView:[self buttonSearchImageView]];
+    
     [[self buttonStart] setEnabled:NO];
+    [self changeImage:@"purpleButtonBigDeactivated.png" ofImageView:[self buttonStartImageView]];
     
     [[[[self appDelegate] mcController] session] disconnect];
     
@@ -201,9 +232,11 @@
     
     if (![[self labelWaiting] isHidden]) {
         [[self labelWaiting] setHidden:YES];
+        [[self waiting] setHidden:YES];
     }
     if ([[self buttonStart] isHidden]) {
         [[self buttonStart] setHidden:NO];
+        [[self buttonStartImageView] setHidden:NO];
     }
     
     [self setReady:NO];
@@ -218,6 +251,13 @@
 
 - (IBAction)toggleVisibility:(id)sender {
     [[[self appDelegate] mcController] advertiseSelf:[[self switchVisible] isOn]];
+}
+
+# pragma mark - Image
+
+-(void) changeImage: (NSString *) nameOfImage ofImageView: (UIImageView *) imageView {
+    UIImage *image = [UIImage imageNamed:nameOfImage];
+    [imageView setImage:image];
 }
 
 /*

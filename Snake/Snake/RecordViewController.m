@@ -1,18 +1,18 @@
 //
-//  ConfigurationViewController.m
+//  RecordViewController.m
 //  Snake
 //
-//  Created by Lucas Padilha on 3/27/15.
+//  Created by Lucas Padilha on 4/2/15.
 //  Copyright (c) 2015 UnderCaffeine. All rights reserved.
 //
 
-#import "ConfigurationViewController.h"
+#import "RecordViewController.h"
 
-@interface ConfigurationViewController ()
+@interface RecordViewController ()
 
 @end
 
-@implementation ConfigurationViewController
+@implementation RecordViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,6 +23,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)back:(id)sender {
+    [[self navigationController] popToRootViewControllerAnimated:YES];
+}
+
 
 /*
 #pragma mark - Navigation

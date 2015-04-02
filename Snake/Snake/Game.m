@@ -83,7 +83,7 @@
 
 -(void) checkSnakePosition:(CGPoint)position {
     // compara a posicao da cabeca da cobra com limites
-    [self checkSnakeOutOfBounds:position];
+    position = [self checkSnakeOutOfBounds:position];
     // compara se a posicao da cabeca da cobra com restante da cobra
     if ([[self snake] compareBodyWithHeadPosition:position]) {
         [self endGame];
@@ -97,38 +97,49 @@
 
 #pragma mark - Compare
 
--(void) checkSnakeOutOfBounds: (CGPoint) position {
+-(CGPoint) checkSnakeOutOfBounds: (CGPoint) position {
     if (position.x < 30) {
-        [self snakeOutOfBound:1 andPosition:position];
+        return [self snakeOutOfBound:1 andPosition:position];
     }
     else if (position.x > (maxWidth + 30)) {
-        [self snakeOutOfBound:2 andPosition:position];
+        return [self snakeOutOfBound:2 andPosition:position];
     }
     else if (position.y < 30) {
-        [self snakeOutOfBound:3 andPosition:position];
+        return [self snakeOutOfBound:3 andPosition:position];
     }
     else if (position.y > (maxHeight + 30)) {
-        [self snakeOutOfBound:4 andPosition:position];
+        return [self snakeOutOfBound:4 andPosition:position];
     }
+    else
+        
+        return position;
 }
 
 //*
--(void) snakeOutOfBound: (int) bound andPosition: (CGPoint) snake {
+-(CGPoint) snakeOutOfBound: (int) bound andPosition: (CGPoint) snake {
     if (bound == 1) {
         [[self snake] placeSnake:CGPointMake(([self blockWidth] * ((int)(maxWidth/[self blockWidth]))) + 30,
                                              snake.y)];
+        return CGPointMake(([self blockWidth] * ((int)(maxWidth/[self blockWidth]))) + 30,
+                           snake.y);
     }
     else if (bound == 2) {
-        [[self snake] placeSnake:CGPointMake([self blockWidth] + 30,
+        [[self snake] placeSnake:CGPointMake(30,
                                              snake.y)];
+        return CGPointMake(30,
+                           snake.y);
     }
     else if (bound == 3) {
         [[self snake] placeSnake:CGPointMake(snake.x,
                                              ([self blockHeight] * ((int)(maxHeight/[self blockHeight]))) + 30)];
+        return CGPointMake(snake.x,
+                           ([self blockHeight] * ((int)(maxHeight/[self blockHeight]))) + 30);
     }
     else {
         [[self snake] placeSnake:CGPointMake(snake.x,
-                                             [self blockHeight] + 30)];
+                                             30)];
+        return CGPointMake(snake.x,
+                           30);
     }
 }
 

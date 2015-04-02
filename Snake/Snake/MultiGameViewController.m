@@ -11,7 +11,6 @@
 @interface MultiGameViewController ()
 
 @property MultiGame *gameController;
-@property BOOL isPaused;
 
 @end
 
