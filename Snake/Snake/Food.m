@@ -54,7 +54,7 @@
 
 #pragma mark - Food Action
 
--(void) foodWasEatenBySnake: (Snake *)snake {
+-(void) foodWasEatenBySnake: (GameSnake *)snake {
     [snake enlarge];
     [self placeFoodRandom];
 }

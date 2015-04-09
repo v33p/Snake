@@ -17,13 +17,18 @@
 		281B55B61AC59520002622ED /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281B55B51AC59520002622ED /* ConnectViewController.m */; };
 		281B55B91AC59818002622ED /* MCController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281B55B81AC59818002622ED /* MCController.m */; };
 		28245D601AC9EDF500B95368 /* Food.m in Sources */ = {isa = PBXBuildFile; fileRef = 28245D5F1AC9EDF500B95368 /* Food.m */; };
+		283B4F991ACDD147008C0FF2 /* squarePurpleButton-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 283B4F981ACDD147008C0FF2 /* squarePurpleButton-2.png */; };
+		283B4F9B1ACDD7CA008C0FF2 /* Front.png in Resources */ = {isa = PBXBuildFile; fileRef = 283B4F9A1ACDD7CA008C0FF2 /* Front.png */; };
 		28438CDD1AC985670027BE8A /* Snake.m in Sources */ = {isa = PBXBuildFile; fileRef = 28438CDC1AC985670027BE8A /* Snake.m */; };
 		28438CDF1AC98C520027BE8A /* Snake.png in Resources */ = {isa = PBXBuildFile; fileRef = 28438CDE1AC98C520027BE8A /* Snake.png */; };
 		28438CE21AC98DD50027BE8A /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 28438CE11AC98DD50027BE8A /* Game.m */; };
 		28438CEC1AC98ED40027BE8A /* MultiGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 28438CEB1AC98ED40027BE8A /* MultiGame.m */; };
 		28438CEF1AC98F610027BE8A /* SingleGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 28438CEE1AC98F610027BE8A /* SingleGame.m */; };
 		28438CF51AC995B00027BE8A /* SingleGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28438CF41AC995B00027BE8A /* SingleGameViewController.m */; };
+		287CB1631ACEEFB1008416AF /* medal.png in Resources */ = {isa = PBXBuildFile; fileRef = 287CB1621ACEEFB1008416AF /* medal.png */; };
+		287CB1651ACEF0DC008416AF /* medal2.png in Resources */ = {isa = PBXBuildFile; fileRef = 287CB1641ACEF0DC008416AF /* medal2.png */; };
 		2881E9E31ACBB22800011437 /* Hardpixel.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 2881E9E21ACBB22800011437 /* Hardpixel.OTF */; };
+		28907EFB1AD5895A00918176 /* GameSnake.m in Sources */ = {isa = PBXBuildFile; fileRef = 28907EFA1AD5895A00918176 /* GameSnake.m */; };
 		28A7A52D1ACAF89E00558594 /* Snake(18).png in Resources */ = {isa = PBXBuildFile; fileRef = 28A7A52C1ACAF89E00558594 /* Snake(18).png */; };
 		28A7A52F1ACAF8AA00558594 /* Food-2(18).png in Resources */ = {isa = PBXBuildFile; fileRef = 28A7A52E1ACAF8AA00558594 /* Food-2(18).png */; };
 		28CD05EE1ACB65F90018ABA7 /* MultiGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28CD05ED1ACB65F90018ABA7 /* MultiGameViewController.m */; };
@@ -66,6 +71,8 @@
 		281B55B81AC59818002622ED /* MCController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCController.m; sourceTree = "<group>"; };
 		28245D5E1AC9EDF500B95368 /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food.h; sourceTree = "<group>"; };
 		28245D5F1AC9EDF500B95368 /* Food.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Food.m; sourceTree = "<group>"; };
+		283B4F981ACDD147008C0FF2 /* squarePurpleButton-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "squarePurpleButton-2.png"; sourceTree = "<group>"; };
+		283B4F9A1ACDD7CA008C0FF2 /* Front.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Front.png; sourceTree = "<group>"; };
 		28438CDB1AC985670027BE8A /* Snake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Snake.h; sourceTree = "<group>"; };
 		28438CDC1AC985670027BE8A /* Snake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Snake.m; sourceTree = "<group>"; };
 		28438CDE1AC98C520027BE8A /* Snake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Snake.png; sourceTree = "<group>"; };
@@ -77,7 +84,11 @@
 		28438CEE1AC98F610027BE8A /* SingleGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleGame.m; sourceTree = "<group>"; };
 		28438CF31AC995B00027BE8A /* SingleGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleGameViewController.h; sourceTree = "<group>"; };
 		28438CF41AC995B00027BE8A /* SingleGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleGameViewController.m; sourceTree = "<group>"; };
+		287CB1621ACEEFB1008416AF /* medal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = medal.png; sourceTree = "<group>"; };
+		287CB1641ACEF0DC008416AF /* medal2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = medal2.png; sourceTree = "<group>"; };
 		2881E9E21ACBB22800011437 /* Hardpixel.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hardpixel.OTF; sourceTree = "<group>"; };
+		28907EF91AD5895A00918176 /* GameSnake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSnake.h; sourceTree = "<group>"; };
+		28907EFA1AD5895A00918176 /* GameSnake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSnake.m; sourceTree = "<group>"; };
 		28A7A52C1ACAF89E00558594 /* Snake(18).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Snake(18).png"; sourceTree = "<group>"; };
 		28A7A52E1ACAF8AA00558594 /* Food-2(18).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Food-2(18).png"; sourceTree = "<group>"; };
 		28CD05EC1ACB65F90018ABA7 /* MultiGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiGameViewController.h; sourceTree = "<group>"; };
@@ -148,6 +159,10 @@
 		281B55881AC5821A002622ED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				287CB1641ACEF0DC008416AF /* medal2.png */,
+				287CB1621ACEEFB1008416AF /* medal.png */,
+				283B4F9A1ACDD7CA008C0FF2 /* Front.png */,
+				283B4F981ACDD147008C0FF2 /* squarePurpleButton-2.png */,
 				28DE67F51ACD86690073DA26 /* purpleButtonBig.png */,
 				28DE67F61ACD86690073DA26 /* purpleButtonBigDeactivated.png */,
 				28DE67F31ACD84AE0073DA26 /* squarePurpleButton.png */,
@@ -187,6 +202,8 @@
 				28438CEE1AC98F610027BE8A /* SingleGame.m */,
 				28438CDB1AC985670027BE8A /* Snake.h */,
 				28438CDC1AC985670027BE8A /* Snake.m */,
+				28907EF91AD5895A00918176 /* GameSnake.h */,
+				28907EFA1AD5895A00918176 /* GameSnake.m */,
 				28438CE01AC98DD50027BE8A /* Game.h */,
 				28438CE11AC98DD50027BE8A /* Game.m */,
 				28438CEA1AC98ED40027BE8A /* MultiGame.h */,
@@ -201,9 +218,9 @@
 			isa = PBXGroup;
 			children = (
 				281B558F1AC5821A002622ED /* InitialViewController.h */,
+				281B55901AC5821A002622ED /* InitialViewController.m */,
 				28DE67FC1ACDC37C0073DA26 /* RecordViewController.h */,
 				28DE67FD1ACDC37C0073DA26 /* RecordViewController.m */,
-				281B55901AC5821A002622ED /* InitialViewController.m */,
 				28CD05EC1ACB65F90018ABA7 /* MultiGameViewController.h */,
 				28CD05ED1ACB65F90018ABA7 /* MultiGameViewController.m */,
 				281B55B41AC59520002622ED /* ConnectViewController.h */,
@@ -308,13 +325,17 @@
 			files = (
 				28A7A52F1ACAF8AA00558594 /* Food-2(18).png in Resources */,
 				281B55971AC5821A002622ED /* Main.storyboard in Resources */,
+				287CB1651ACEF0DC008416AF /* medal2.png in Resources */,
 				28DE67F11ACD815B0073DA26 /* deactivatedButton.png in Resources */,
+				287CB1631ACEEFB1008416AF /* medal.png in Resources */,
 				2881E9E31ACBB22800011437 /* Hardpixel.OTF in Resources */,
 				28DE67F21ACD815B0073DA26 /* purpleButton.png in Resources */,
+				283B4F9B1ACDD7CA008C0FF2 /* Front.png in Resources */,
 				28DE67F81ACD86690073DA26 /* purpleButtonBigDeactivated.png in Resources */,
 				28DE67F71ACD86690073DA26 /* purpleButtonBig.png in Resources */,
 				281B559C1AC5821A002622ED /* LaunchScreen.xib in Resources */,
 				28DE67F41ACD84AE0073DA26 /* squarePurpleButton.png in Resources */,
+				283B4F991ACDD147008C0FF2 /* squarePurpleButton-2.png in Resources */,
 				28438CDF1AC98C520027BE8A /* Snake.png in Resources */,
 				281B55991AC5821A002622ED /* Images.xcassets in Resources */,
 				28A7A52D1ACAF89E00558594 /* Snake(18).png in Resources */,
@@ -348,6 +369,7 @@
 				28438CEF1AC98F610027BE8A /* SingleGame.m in Sources */,
 				281B558B1AC5821A002622ED /* main.m in Sources */,
 				281B55B91AC59818002622ED /* MCController.m in Sources */,
+				28907EFB1AD5895A00918176 /* GameSnake.m in Sources */,
 				28DC042A1ACC3946000524A8 /* HostManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

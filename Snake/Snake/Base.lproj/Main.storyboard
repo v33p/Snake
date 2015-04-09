@@ -76,7 +76,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="squarePurpleButton.png" translatesAutoresizingMaskIntoConstraints="NO" id="YYk-TX-UHG">
-                                <rect key="frame" x="259" y="-14" width="240" height="128"/>
+                                <rect key="frame" x="262" y="-14" width="240" height="128"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="purpleButton.png" translatesAutoresizingMaskIntoConstraints="NO" id="sml-ZE-DJH">
                                 <rect key="frame" x="67" y="340" width="240" height="128"/>
@@ -106,9 +106,6 @@
                                     <segue destination="tIX-IM-LMi" kind="show" id="kDh-hM-6ej"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oTg-uv-OfI">
-                                <rect key="frame" x="101" y="148" width="172" height="172"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="© LOOP 2015" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHH-zf-Vq8">
                                 <rect key="frame" x="128" y="585" width="119" height="21"/>
                                 <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="17"/>
@@ -116,7 +113,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEm-uv-wj4">
-                                <rect key="frame" x="329" y="29" width="49" height="44"/>
+                                <rect key="frame" x="332" y="29" width="49" height="44"/>
                                 <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="26"/>
                                 <state key="normal" title="®">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -128,8 +125,13 @@
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sE3-B9-qSW">
                                 <rect key="frame" x="80" y="88" width="215" height="30"/>
+                                <color key="textColor" red="0.27843137254901962" green="0.20392156862745098" blue="0.396078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="23"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                <connections>
+                                    <action selector="editingDidEnd:" destination="9pv-A4-QxB" eventType="editingDidEnd" id="YB4-do-nVC"/>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="yJ3-9A-Ek8"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="who's playing?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UeG-q1-dfD">
                                 <rect key="frame" x="93" y="47" width="189" height="38"/>
@@ -139,12 +141,24 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.66666666669999997" green="0.82352941180000006" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="6IU-xw-2IU" appends="YES" id="pWs-dU-Lkv"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Play" image="first" id="acW-dT-cKf"/>
                     <navigationItem key="navigationItem" id="PZM-yK-366"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="nameTextField" destination="sE3-B9-qSW" id="K2T-cC-W8D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="6IU-xw-2IU">
+                    <connections>
+                        <action selector="didTapOnScreen:" destination="9pv-A4-QxB" id="Tan-Ub-580"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="959.5" y="425.5"/>
         </scene>
@@ -252,6 +266,7 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dwf-Ad-c9f">
                                 <rect key="frame" x="247" y="282" width="51" height="31"/>
+                                <color key="onTintColor" red="0.27843137254901962" green="0.20392156862745098" blue="0.396078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="toggleVisibility:" destination="tIX-IM-LMi" eventType="valueChanged" id="Jql-WM-cQ0"/>
                                 </connections>
@@ -316,7 +331,7 @@
                                 <color key="textColor" red="0.35294117650000001" green="0.27450980390000002" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="squarePurpleButton.png" translatesAutoresizingMaskIntoConstraints="NO" id="c5p-i5-5VN">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="squarePurpleButton-2.png" translatesAutoresizingMaskIntoConstraints="NO" id="c5p-i5-5VN">
                                 <rect key="frame" x="-75" y="-14" width="240" height="128"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oul-sm-l1R">
@@ -438,6 +453,12 @@
                                         <rect key="frame" x="169" y="315" width="37" height="37"/>
                                         <color key="color" red="0.35294117650000001" green="0.27450980390000002" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </activityIndicatorView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="medal2.png" translatesAutoresizingMaskIntoConstraints="NO" id="pdy-9O-ct8" userLabel="ScoreHost">
+                                        <rect key="frame" x="167" y="317" width="240" height="128"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="medal2.png" translatesAutoresizingMaskIntoConstraints="NO" id="O77-kV-jal" userLabel="ScoreClient">
+                                        <rect key="frame" x="-34" y="317" width="240" height="128"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                             </view>
@@ -455,6 +476,8 @@
                         <outlet property="connecting" destination="Zzl-4A-F2L" id="XYJ-fq-uUj"/>
                         <outlet property="endGameView" destination="5gD-gS-LBr" id="eOd-l0-Bm2"/>
                         <outlet property="label" destination="bHE-x7-vYf" id="oti-Xq-oLz"/>
+                        <outlet property="medalClient" destination="pdy-9O-ct8" id="fgs-M9-QVf"/>
+                        <outlet property="medalHost" destination="O77-kV-jal" id="xfK-9O-w5r"/>
                         <outlet property="nameClient" destination="67v-f0-PGe" id="Xdr-nq-CsU"/>
                         <outlet property="nameHost" destination="brj-CQ-54a" id="Ouj-UU-8A9"/>
                         <outlet property="scoreClient" destination="LSP-zX-RPh" id="vDz-aw-NKI"/>
@@ -483,32 +506,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RECORDS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YmD-fD-X9c">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="®ECORDS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YmD-fD-X9c">
                                 <rect key="frame" x="108" y="20" width="158" height="61"/>
                                 <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="30"/>
                                 <color key="textColor" red="0.35294117650000001" green="0.27450980390000002" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INQ-1S-Ixz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="63" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INQ-1S-Ixz">
                                 <rect key="frame" x="108" y="175" width="158" height="91"/>
                                 <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="50"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjq-kz-6wy">
-                                <rect key="frame" x="108" y="352" width="158" height="91"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="26" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjq-kz-6wy">
+                                <rect key="frame" x="108" y="353" width="158" height="91"/>
                                 <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="50"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTi-Qk-Ov2">
-                                <rect key="frame" x="108" y="436" width="158" height="91"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTi-Qk-Ov2">
+                                <rect key="frame" x="108" y="485" width="158" height="91"/>
                                 <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="50"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VIPhone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JnW-4S-ZpZ">
-                                <rect key="frame" x="91" y="315" width="193" height="91"/>
+                                <rect key="frame" x="91" y="316" width="193" height="91"/>
                                 <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -520,7 +543,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="iPhone Simulator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTo-zc-prb">
-                                <rect key="frame" x="96" y="475" width="193" height="91"/>
+                                <rect key="frame" x="91" y="523" width="193" height="91"/>
                                 <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -538,16 +561,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="x" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qx9-Ks-qEK">
-                                <rect key="frame" x="108" y="389" width="158" height="91"/>
+                                <rect key="frame" x="108" y="415" width="158" height="91"/>
                                 <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="50"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="squarePurpleButton.png" translatesAutoresizingMaskIntoConstraints="NO" id="mgE-fx-8Cv">
-                                <rect key="frame" x="-74" y="-15" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="squarePurpleButton-2.png" translatesAutoresizingMaskIntoConstraints="NO" id="mgE-fx-8Cv">
+                                <rect key="frame" x="-74" y="-14" width="240" height="128"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7im-wE-rtE">
-                                <rect key="frame" x="-11" y="13" width="59" height="60"/>
+                                <rect key="frame" x="-11" y="14" width="59" height="60"/>
                                 <fontDescription key="fontDescription" name="Hardpixel" family="Hardpixel" pointSize="40"/>
                                 <state key="normal" title="&lt;">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -557,6 +580,9 @@
                                     <action selector="back:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="1CH-Vz-JCd"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="medal2.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vc2-2H-2sA">
+                                <rect key="frame" x="-11" y="350" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.66666666669999997" green="0.82352941180000006" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -569,8 +595,10 @@
     <resources>
         <image name="deactivatedButton.png" width="345" height="100"/>
         <image name="first" width="30" height="30"/>
+        <image name="medal2.png" width="345" height="150"/>
         <image name="purpleButton.png" width="345" height="100"/>
         <image name="purpleButtonBigDeactivated.png" width="345" height="200"/>
+        <image name="squarePurpleButton-2.png" width="345" height="100"/>
         <image name="squarePurpleButton.png" width="345" height="100"/>
     </resources>
 </document>

@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "Snake.h"
+#import "GameSnake.h"
 #import "Food.h"
 
-#define maxWidth 300
-#define maxHeight 600
+#define maxWidth 320
+#define maxHeight 620
 
-@class Snake;
+@class GameSnake;
 @class Food;
 
 @interface Game : NSObject
@@ -22,7 +22,7 @@
 @property (readwrite) int blockWidth;
 @property (readwrite) int blockHeight;
 
-@property Snake *snake;
+@property GameSnake *snake;
 @property Food *food;
 
 @property (readwrite) UIView *view;

@@ -16,9 +16,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *secondButton;
 @property (weak, nonatomic) IBOutlet UILabel *nameHost;
 @property (weak, nonatomic) IBOutlet UILabel *scoreHost;
+@property (weak, nonatomic) IBOutlet UIImageView *medalHost;
 
 @property (weak, nonatomic) IBOutlet UILabel *nameClient;
 @property (weak, nonatomic) IBOutlet UILabel *scoreClient;
+@property (weak, nonatomic) IBOutlet UIImageView *medalClient;
 
 @property (weak, nonatomic) IBOutlet UIView *endGameView;
 

@@ -65,7 +65,8 @@
         [self setHasStarted:YES];
         NSLog(@"start game");
         
-        [self setSnake:[[Snake alloc] initWithGame: (Game *)self]];
+        [self setSnake:[[GameSnake alloc] initWithGame: (Game *)self]];
+//        [self setSnake:[[Snake alloc] initWithView:[self view]]];
         
         [self setFood: [[Food alloc] initWithGame:(Game *) self]];
         
@@ -142,12 +143,12 @@
         [self endGame];
         
         if ([[self hostManager] isHost]) {
-            [[[self viewController] scoreClient] setTextColor:[UIColor greenColor]];
-            [[[self viewController] scoreHost] setTextColor:[UIColor redColor]];
+            [[[self viewController] medalClient] setHidden:NO];
+            [[[self viewController] medalHost] setHidden:YES];
         }
         else {
-            [[[self viewController] scoreHost] setTextColor:[UIColor greenColor]];
-            [[[self viewController] scoreClient] setTextColor:[UIColor redColor]];
+            [[[self viewController] medalClient] setHidden:YES];
+            [[[self viewController] medalHost] setHidden:NO];
         }
         
         NSString *data = @"$";
@@ -250,12 +251,12 @@
         // end game
         else if ([receivedText hasPrefix:@"$"]) {
             if ([[self hostManager] isHost]) {
-                [[[self viewController] scoreHost] setTextColor:[UIColor greenColor]];
-                [[[self viewController] scoreClient] setTextColor:[UIColor redColor]];
+                [[[self viewController] medalClient] setHidden:YES];
+                [[[self viewController] medalHost] setHidden:NO];
             }
             else {
-                [[[self viewController] scoreClient] setTextColor:[UIColor greenColor]];
-                [[[self viewController] scoreHost] setTextColor:[UIColor redColor]];
+                [[[self viewController] medalClient] setHidden:NO];
+                [[[self viewController] medalHost] setHidden:YES];
             }
             
             [self endGame];

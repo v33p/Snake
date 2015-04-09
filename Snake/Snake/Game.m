@@ -36,7 +36,8 @@
 #pragma mark - Game Control
 
 -(void) startGame {
-    [self setSnake:[[Snake alloc] initWithGame: (Game *)self]];
+    [self setSnake:[[GameSnake alloc] initWithGame: (Game *)self]];
+//    [self setSnake:[[Snake alloc] initWithView:[self view]]];
     [self setFood:[[Food alloc] initWithGame:(Game *)self]];
     
     [[self snake] startMoving];
@@ -54,6 +55,7 @@
     NSLog(@"Fim de Jogo");
     
 }
+
 
 #pragma mark - View Controller Comunication
 

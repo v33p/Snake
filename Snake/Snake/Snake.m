@@ -10,7 +10,7 @@
 
 @interface Snake()
 
-@property Game *game;
+@property UIView *view;
 
 @property UIImage *image;
 @property NSMutableArray *body;
@@ -27,7 +27,8 @@
 @property (readwrite) double speed;
 @property (readwrite) double factor;
 
--(void) move;
+@property int blockWidth;
+@property int blockHeight;
 
 @end
 
@@ -35,18 +36,21 @@
 
 #pragma mark - Initializers
 
--(Snake *) initWithGame:(Game *)game {
+-(Snake *) initWithView:(UIView *)view {
     
     self = [super init];
     
     if (self) {
         
-        [self setGame:game];
+        [self setView:view];
         
         [self setBody:[[NSMutableArray alloc] init]];
         
         [self setImage:[UIImage imageNamed:@"Snake(18).png"]];
         UIImageView *imageView = [[UIImageView alloc] initWithImage:[self image]];
+        
+        [self setBlockHeight:[self image].size.height];
+        [self setBlockWidth:[self image].size.width];
         
         [[self body] addObject:imageView];
         
@@ -56,7 +60,7 @@
         [self setTemporaryAxisYSaver:1];
         [self setVerticalMove:YES];
         
-        [[self game] addImage:imageView];
+        [[self view] addSubview:imageView];
         
         for (int i = 1; i < 5; i++) {
             imageView = [[UIImageView alloc] initWithImage:[self image]];
@@ -64,7 +68,50 @@
             CGPoint point = CGPointMake(((UIImageView *) [self body][0]).center.x,
                                         ((UIImageView *) [self body][0]).center.y);
             [imageView setCenter:point];
-            [[self game] addImage:imageView];
+            [[self view] addSubview:imageView];
+        }
+        
+        [self setSpeed:0.2];
+        [self setFactor:0.02];
+        
+    }
+    
+    return self;
+}
+
+-(Snake *) initWithView:(UIView *)view andPosition: (CGPoint)position andSize: (int)size{
+    
+    self = [super init];
+    
+    if (self) {
+        
+        [self setView:view];
+        
+        [self setBody:[[NSMutableArray alloc] init]];
+        
+        [self setImage:[UIImage imageNamed:@"Snake(18).png"]];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[self image]];
+        
+        [self setBlockHeight:[self image].size.height];
+        [self setBlockWidth:[self image].size.width];
+        
+        [[self body] addObject:imageView];
+        
+        [self placeSnake:position];
+        
+        [self setTemporaryAxisXSaver:0];
+        [self setTemporaryAxisYSaver:1];
+        [self setVerticalMove:YES];
+        
+        [[self view] addSubview:imageView];
+        
+        for (int i = 1; i < size; i++) {
+            imageView = [[UIImageView alloc] initWithImage:[self image]];
+            [[self body] addObject:imageView];
+            CGPoint point = CGPointMake(((UIImageView *) [self body][0]).center.x,
+                                        ((UIImageView *) [self body][0]).center.y);
+            [imageView setCenter:point];
+            [[self view] addSubview:imageView];
         }
         
         [self setSpeed:0.2];
@@ -82,8 +129,8 @@
 }
 
 -(CGPoint) generateRandomPosition {
-    return CGPointMake([[self game] blockWidth] * (arc4random() % (int)(maxWidth/[[self game] blockWidth])) + 30,
-                       [[self game] blockHeight] * (arc4random() % (int)((maxHeight-300)/[[self game] blockHeight])) +30);
+    return CGPointMake([self blockWidth] * (arc4random() % (int)(maxWidth/[self blockWidth])) + 30,
+                       [self blockHeight] * (arc4random() % (int)((maxHeight-300)/[self blockHeight])) +30);
 }
 
 #pragma mark - Movimentation
@@ -95,12 +142,10 @@
         [((UIImageView *)[self body][i]) setCenter:point];
     }
     
-    CGPoint point = CGPointMake(((UIImageView *) [self body][0]).center.x + ([self axisX] * [[self game] blockWidth]),
-                                ((UIImageView *) [self body][0]).center.y + ([self axisY] * [[self game] blockHeight]));
+    CGPoint point = CGPointMake(((UIImageView *) [self body][0]).center.x + ([self axisX] * [self blockWidth]),
+                                ((UIImageView *) [self body][0]).center.y + ([self axisY] * [self blockHeight]));
     
     [((UIImageView *) [self body][0]) setCenter:point];
-    
-    [[self game] checkSnakePosition:[((UIImageView *) [self body][0]) center]];
 }
 
 -(void) startMoving {
@@ -172,6 +217,10 @@
         return NO;
 }
 
+-(CGPoint) headPosition {
+    return ((UIImageView *) [self body][0]).center;
+}
+
 #pragma mark - Effects
 
 -(void) enlarge {
@@ -184,7 +233,7 @@
     
     [[self body] addObject:imageView];
     
-    [[self game] addImage:imageView];
+    [[self view] addSubview:imageView];
 }
 
 -(void) changingSpeedByMultiplyingByFactor: (double) factor {

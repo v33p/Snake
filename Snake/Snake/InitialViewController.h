@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  InitialViewController.h
 //  Snake
 //
 //  Created by Lucas Padilha on 3/27/15.
@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
+#import "Snake.h"
 
 @interface InitialViewController : UIViewController
 

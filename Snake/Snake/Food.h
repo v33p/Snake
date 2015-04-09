@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "Game.h"
-#import "Snake.h"
+#import "GameSnake.h"
 
 @class Game;
-@class Snake;
+@class GameSnake;
 
 @interface Food : NSObject
 
@@ -21,6 +21,6 @@
 -(void) placeFoodRandom;
 -(void) placeFoodAtPosition:(CGPoint)position;
 -(CGPoint) position;
--(void) foodWasEatenBySnake: (Snake *)snake;
+-(void) foodWasEatenBySnake: (GameSnake *)snake;
 
 @end
